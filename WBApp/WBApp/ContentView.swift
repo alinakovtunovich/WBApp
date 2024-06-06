@@ -9,12 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        WalkThroughtScreen()
+        ZStack {
+            Color("backgroundColor").edgesIgnoringSafeArea(.all)
+            WalkThroughtScreen()
+        }
+
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView()    
     }
 }
