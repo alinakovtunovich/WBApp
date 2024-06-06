@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WalkThroughtScreen: View {
+    @State private var startVarification = false
     
     var body: some View {
         VStack {
@@ -16,11 +17,26 @@ struct WalkThroughtScreen: View {
             firstButton
             mainButton
         }
-       
+        .sheet(isPresented: $startVarification) { VerificationSheetScreen() }
     }
 }
 
 extension WalkThroughtScreen {
+    
+    var mainButton: some View {
+        Button("Начать общаться") {
+            startVarification = true
+        }
+            .font(.system(size: 16))
+            .frame(width: 327, height: 52)
+            .fontWeight(.bold)
+            .foregroundColor(Color("fontButtonColor"))
+            .background(Color("brandButtonColor"))
+            .cornerRadius(30)
+            .multilineTextAlignment(.center)
+            .offset(x: 0, y: 120)
+    }
+    
     var illustration: some View {
         Image("Image")
             .resizable()
@@ -46,18 +62,6 @@ extension WalkThroughtScreen {
             .foregroundColor(Color("fontColor"))
             .multilineTextAlignment(.center)
             .offset(x: 0, y: 100)
-    }
-    
-    var mainButton: some View {
-        Button("Начать общаться") {}
-            .font(.system(size: 16))
-            .frame(width: 327, height: 52)
-            .fontWeight(.bold)
-            .foregroundColor(Color("fontButtonColor"))
-            .background(Color("brandButtonColor"))
-            .cornerRadius(30)
-            .multilineTextAlignment(.center)
-            .offset(x: 0, y: 120)
     }
 }
 

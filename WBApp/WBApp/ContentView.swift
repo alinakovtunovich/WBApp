@@ -13,7 +13,6 @@ struct ContentView: View {
             Color("backgroundColor").edgesIgnoringSafeArea(.all)
             WalkThroughtScreen()
         }
-
     }
 }
 
