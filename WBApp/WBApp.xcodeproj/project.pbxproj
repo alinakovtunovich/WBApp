@@ -15,6 +15,13 @@
 		2CD88CC02C11F58200A3C955 /* VerificationSheetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD88CBF2C11F58200A3C955 /* VerificationSheetScreen.swift */; };
 		A30C5BD72C1840080010C974 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C5BD62C1840080010C974 /* ContactsView.swift */; };
 		A30C5BD92C187BDA0010C974 /* ContactsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C5BD82C187BDA0010C974 /* ContactsList.swift */; };
+		A3403DC72C1B30C4000B3C36 /* ProfileAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DC62C1B30C4000B3C36 /* ProfileAccountView.swift */; };
+		A3403DC92C1B323D000B3C36 /* ToolbarContactsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DC82C1B323D000B3C36 /* ToolbarContactsList.swift */; };
+		A3403DCB2C1B374E000B3C36 /* Searchbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DCA2C1B374E000B3C36 /* Searchbar.swift */; };
+		A3403DCF2C1B3879000B3C36 /* ProfileInList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DCE2C1B3879000B3C36 /* ProfileInList.swift */; };
+		A3403DD12C1B86DA000B3C36 /* StoryOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DD02C1B86DA000B3C36 /* StoryOverlay.swift */; };
+		A3403DD32C1B8B7C000B3C36 /* StatusOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DD22C1B8B7C000B3C36 /* StatusOverlay.swift */; };
+		A3403DD62C1B8C28000B3C36 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DD52C1B8C28000B3C36 /* AvatarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +34,14 @@
 		2CD88CBF2C11F58200A3C955 /* VerificationSheetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationSheetScreen.swift; sourceTree = "<group>"; };
 		A30C5BD62C1840080010C974 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		A30C5BD82C187BDA0010C974 /* ContactsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsList.swift; sourceTree = "<group>"; };
+		A3403DC52C1B2B05000B3C36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A3403DC62C1B30C4000B3C36 /* ProfileAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAccountView.swift; sourceTree = "<group>"; };
+		A3403DC82C1B323D000B3C36 /* ToolbarContactsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarContactsList.swift; sourceTree = "<group>"; };
+		A3403DCA2C1B374E000B3C36 /* Searchbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchbar.swift; sourceTree = "<group>"; };
+		A3403DCE2C1B3879000B3C36 /* ProfileInList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInList.swift; sourceTree = "<group>"; };
+		A3403DD02C1B86DA000B3C36 /* StoryOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryOverlay.swift; sourceTree = "<group>"; };
+		A3403DD22C1B8B7C000B3C36 /* StatusOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOverlay.swift; sourceTree = "<group>"; };
+		A3403DD52C1B8C28000B3C36 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +74,7 @@
 		2C0C76D32C10B7A1009985F2 /* WBApp */ = {
 			isa = PBXGroup;
 			children = (
+				A3403DC52C1B2B05000B3C36 /* Info.plist */,
 				2C0C76D42C10B7A1009985F2 /* WBAppApp.swift */,
 				A30C5BD52C183E560010C974 /* 2_lesson */,
 				A30C5BD42C183E090010C974 /* 1_lesson */,
@@ -89,10 +105,41 @@
 		A30C5BD52C183E560010C974 /* 2_lesson */ = {
 			isa = PBXGroup;
 			children = (
-				A30C5BD62C1840080010C974 /* ContactsView.swift */,
-				A30C5BD82C187BDA0010C974 /* ContactsList.swift */,
+				A3403DCD2C1B380D000B3C36 /* ContactsListView */,
+				A3403DCC2C1B37F8000B3C36 /* Model */,
+				A3403DC62C1B30C4000B3C36 /* ProfileAccountView.swift */,
 			);
 			path = 2_lesson;
+			sourceTree = "<group>";
+		};
+		A3403DCC2C1B37F8000B3C36 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A30C5BD82C187BDA0010C974 /* ContactsList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A3403DCD2C1B380D000B3C36 /* ContactsListView */ = {
+			isa = PBXGroup;
+			children = (
+				A30C5BD62C1840080010C974 /* ContactsView.swift */,
+				A3403DCA2C1B374E000B3C36 /* Searchbar.swift */,
+				A3403DC82C1B323D000B3C36 /* ToolbarContactsList.swift */,
+				A3403DCE2C1B3879000B3C36 /* ProfileInList.swift */,
+				A3403DD42C1B8BE8000B3C36 /* AvatarGroup */,
+			);
+			path = ContactsListView;
+			sourceTree = "<group>";
+		};
+		A3403DD42C1B8BE8000B3C36 /* AvatarGroup */ = {
+			isa = PBXGroup;
+			children = (
+				A3403DD22C1B8B7C000B3C36 /* StatusOverlay.swift */,
+				A3403DD02C1B86DA000B3C36 /* StoryOverlay.swift */,
+				A3403DD52C1B8C28000B3C36 /* AvatarView.swift */,
+			);
+			path = AvatarGroup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,9 +214,16 @@
 			files = (
 				2C0C76D72C10B7A1009985F2 /* ContentView.swift in Sources */,
 				2CD88CC02C11F58200A3C955 /* VerificationSheetScreen.swift in Sources */,
+				A3403DC92C1B323D000B3C36 /* ToolbarContactsList.swift in Sources */,
 				A30C5BD92C187BDA0010C974 /* ContactsList.swift in Sources */,
+				A3403DD62C1B8C28000B3C36 /* AvatarView.swift in Sources */,
+				A3403DC72C1B30C4000B3C36 /* ProfileAccountView.swift in Sources */,
+				A3403DD12C1B86DA000B3C36 /* StoryOverlay.swift in Sources */,
+				A3403DCB2C1B374E000B3C36 /* Searchbar.swift in Sources */,
 				2C0C76D52C10B7A1009985F2 /* WBAppApp.swift in Sources */,
+				A3403DD32C1B8B7C000B3C36 /* StatusOverlay.swift in Sources */,
 				A30C5BD72C1840080010C974 /* ContactsView.swift in Sources */,
+				A3403DCF2C1B3879000B3C36 /* ProfileInList.swift in Sources */,
 				2C0C76E32C10B80A009985F2 /* WalkThroughtScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,7 +356,7 @@
 				DEVELOPMENT_TEAM = GR465RHT3M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = WBApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -331,7 +385,7 @@
 				DEVELOPMENT_TEAM = GR465RHT3M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = WBApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
