@@ -14,7 +14,7 @@ struct StoryOverlay: View {
         Group {
             if contact.story {
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(LinearGradient(gradient: Gradient(colors: [Color("firstPoint"), Color("secondPoint")]), startPoint: .leading, endPoint: .trailing), lineWidth: 2)
+                    .stroke(LinearGradient(gradient: Gradient(colors: [Color("avatarColor"), Color("secondPoint")]), startPoint: .leading, endPoint: .trailing), lineWidth: 2)
             } else {
                 RoundedRectangle(cornerRadius: 0)
                     .stroke(Color.clear, lineWidth: 0)

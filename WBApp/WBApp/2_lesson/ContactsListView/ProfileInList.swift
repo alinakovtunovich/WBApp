@@ -15,7 +15,6 @@ struct ProfileInList: View {
     var body: some View {
         HStack {
             AvatarView(contact: contact)
-//                .padding(6)
             VStack(alignment: .leading) {
                 Text(contact.name)
                     .bold().font(.system(size: 14))

@@ -8,8 +8,8 @@
 import Foundation
 
 
-public struct Contacts: Hashable {
-    let id: UUID = UUID()
+public struct Contacts: Hashable, Identifiable {
+    public let id: UUID = UUID()
     let name: String
     var avatar: String?
     var status: Bool

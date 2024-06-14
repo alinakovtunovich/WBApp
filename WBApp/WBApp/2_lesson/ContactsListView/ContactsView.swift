@@ -16,15 +16,19 @@ struct ContactsView: View {
             VStack {
                Searchbar()
                 NavigationStack(path: $path) {
-                    List(contactSample, id: \.self) { contact in
+                    List(contactSample) { contact in
                         ProfileInList(contact: contact)
+                            .onTapGesture {
+                                path.append(contact)
+                        }
                     }
+                    .navigationDestination(for: Contacts.self, destination: { contact in
+                            ProfileAccountView(contact: contact)
+                            .navigationBarBackButtonHidden()
+                        })
                     .padding(.horizontal, -12)
                     .padding(.vertical, -46)
                     .scrollContentBackground(.hidden)
-                    .navigationDestination(for: Contacts.self) { contact in
-                        ProfileAccountView(contact: contact)
-                    }
                 }
             }
             .toolbar {
