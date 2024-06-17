@@ -74,10 +74,10 @@
 		2C0C76D32C10B7A1009985F2 /* WBApp */ = {
 			isa = PBXGroup;
 			children = (
+				A34B880B2C203C6800F4AF82 /* 1_lesson */,
 				A3403DC52C1B2B05000B3C36 /* Info.plist */,
 				2C0C76D42C10B7A1009985F2 /* WBAppApp.swift */,
 				A30C5BD52C183E560010C974 /* 2_lesson */,
-				A30C5BD42C183E090010C974 /* 1_lesson */,
 				2C0C76D82C10B7A3009985F2 /* Assets.xcassets */,
 				2C0C76DA2C10B7A3009985F2 /* Preview Content */,
 			);
@@ -90,16 +90,6 @@
 				2C0C76DB2C10B7A3009985F2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		A30C5BD42C183E090010C974 /* 1_lesson */ = {
-			isa = PBXGroup;
-			children = (
-				2C0C76D62C10B7A1009985F2 /* ContentView.swift */,
-				2C0C76E22C10B80A009985F2 /* WalkThroughtScreen.swift */,
-				2CD88CBF2C11F58200A3C955 /* VerificationSheetScreen.swift */,
-			);
-			path = 1_lesson;
 			sourceTree = "<group>";
 		};
 		A30C5BD52C183E560010C974 /* 2_lesson */ = {
@@ -140,6 +130,16 @@
 				A3403DD52C1B8C28000B3C36 /* AvatarView.swift */,
 			);
 			path = AvatarGroup;
+			sourceTree = "<group>";
+		};
+		A34B880B2C203C6800F4AF82 /* 1_lesson */ = {
+			isa = PBXGroup;
+			children = (
+				2CD88CBF2C11F58200A3C955 /* VerificationSheetScreen.swift */,
+				2C0C76D62C10B7A1009985F2 /* ContentView.swift */,
+				2C0C76E22C10B80A009985F2 /* WalkThroughtScreen.swift */,
+			);
+			path = 1_lesson;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
