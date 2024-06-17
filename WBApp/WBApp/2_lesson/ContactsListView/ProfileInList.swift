@@ -9,12 +9,10 @@ import SwiftUI
 
 struct ProfileInList: View {
     let contact: Contacts
-    
 
-    
     var body: some View {
         HStack {
-            AvatarView(contact: contact)
+            AvatarView(contact: contact, localizationAvatar: "list")
             VStack(alignment: .leading) {
                 Text(contact.name)
                     .bold().font(.system(size: 14))
@@ -24,6 +22,7 @@ struct ProfileInList: View {
                     .foregroundColor(Color.gray)
             }
         }
+//        .background(Color("backgroundColor"))
     }
 }
 

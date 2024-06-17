@@ -13,8 +13,8 @@ struct Searchbar: View {
         TextField("Search", text: $searchText)
             .padding(.leading, 40)
             .frame(height: 36)
-            .background(Color("fontButtonColor"))
-            .foregroundColor(.gray)
+            .background(Color("profileDetails"))
+            .foregroundColor(Color("searchFont"))
             .font(.system(size: 14))
             .cornerRadius(4)
             .overlay(

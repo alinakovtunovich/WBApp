@@ -9,30 +9,31 @@ import SwiftUI
 
 struct ContactsView: View {
     @State var path = [Contacts]()
-    
-    var body: some View {
 
+    var body: some View {
         NavigationStack {
             VStack {
-               Searchbar()
+                Searchbar()
                 NavigationStack(path: $path) {
                     List(contactSample) { contact in
                         ProfileInList(contact: contact)
-                            .onTapGesture {
-                                path.append(contact)
+                        .onTapGesture {
+                            path.append(contact)
                         }
+                        .listRowBackground(Color.clear) 
                     }
                     .navigationDestination(for: Contacts.self, destination: { contact in
-                            ProfileAccountView(contact: contact)
-                            .navigationBarBackButtonHidden()
-                        })
+                        ProfileAccountView(contact: contact)
+                        .navigationBarBackButtonHidden()
+                    })
                     .padding(.horizontal, -12)
                     .padding(.vertical, -46)
                     .scrollContentBackground(.hidden)
                 }
             }
+            .background(Color("backgroundColor"))
             .toolbar {
-                ToolbarContactsList()
+            ToolbarContactsList()
             }
         }
     }

@@ -12,10 +12,10 @@ struct StatusOverlay: View {
     
     var body: some View {
         Circle()
-            .fill(contact.status ? Color.green : Color.clear) // Цвет кружка в зависимости от статуса
-            .frame(width: 12, height: 12) // Размер кружка
+            .fill(contact.status ? Color.green : Color.clear)
+            .frame(width: 12, height: 12)
         
-            .offset(x: 20, y: -20) // Позиционирование кружка в правом верхнем углу
+            .offset(x: 20, y: -20)
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
                     .stroke(contact.status ? .white : .clear, lineWidth: 2)
