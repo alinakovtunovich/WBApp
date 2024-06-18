@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct Searchbar: View {
-    @State private var searchText = ""
+    @Binding var searchText: String
+
     var body: some View {
         TextField("Search", text: $searchText)
             .padding(.leading, 40)
@@ -30,8 +31,9 @@ struct Searchbar: View {
     }
 }
 
-struct Searchbar_Previews: PreviewProvider {
-    static var previews: some View {
-        Searchbar()
-    }
-}
+
+//struct Searchbar_Previews: PreviewProvider {
+//    static var previews: some View {
+////        Searchbar(searchText: "")
+//    }
+//}

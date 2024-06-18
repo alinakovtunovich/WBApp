@@ -8,34 +8,27 @@
 import SwiftUI
 
 enum Tabs: Hashable {
-    case heart
-    case broke
-    case game
+    case user
+    case communication
+    case menu
 }
 
 struct Contact_TabView: View {
     
-    @State var selectedTab: Tabs = .heart
+    @State var selectedTab: Tabs = .user
     
     var body: some View {
         TabView(selection: $selectedTab, content: {
             ContactsView().tabItem {
-                Image("user")
-                    .resizable()
-                    .frame(width: 10, height: 10)
-            }.tag(Tabs.heart)
+                Image(selectedTab != .user ? "user" : "userselected")
+            }.tag(Tabs.user)
             ContentView().tabItem {
-                Image("communication")
-                    .resizable()
-                    .frame(width: 21, height: 5)
-            }.tag(Tabs.game)
-            ContentView().tabItem {
-                Image("menu")
-                    .resizable()
-                    .frame(width: 21, height: 5)
-            }.tag(Tabs.broke)
+                Image(selectedTab != .communication ? "communication" : "communicationselected")
+            }.tag(Tabs.communication)
+            ProfileAccountView(contact: contactSample[0]).tabItem {
+                Image(selectedTab != .menu ? "menu" : "menuselected")
+            }.tag(Tabs.menu)
         })
-
     }
 }
 
