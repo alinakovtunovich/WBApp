@@ -22,8 +22,6 @@ struct ToolbarContactsList: View {
                 Button(action: {}) {
                     Image(systemName: "plus")
                         .foregroundColor(Color.primary)
-                        .preferredColorScheme(.light)
-                        .preferredColorScheme(.dark)
                         .font(.system(size: 18))
                 }
                 .padding()

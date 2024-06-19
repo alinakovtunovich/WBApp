@@ -30,6 +30,7 @@ struct Contact_TabView: View {
             }.tag(Tabs.menu)
         })
     }
+        
 }
 
 struct Contact_TabView_Previews: PreviewProvider {
