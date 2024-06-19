@@ -22,7 +22,6 @@ struct ProfileInList: View {
                     .foregroundColor(Color.gray)
             }
         }
-//        .background(Color("backgroundColor"))
     }
 }
 

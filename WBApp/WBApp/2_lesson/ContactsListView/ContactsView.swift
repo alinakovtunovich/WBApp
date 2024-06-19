@@ -22,7 +22,7 @@ struct ContactsView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Searchbar()
+                Searchbar(searchText: $searchText)
                 NavigationStack(path: $path) {
                     List(filteredContacts) { contact in
                         ProfileInList(contact: contact)
