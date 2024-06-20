@@ -9,34 +9,54 @@ import SwiftUI
 
 struct ContactsView: View {
     @State var path = [Contacts]()
+    @State private var searchText = ""
     
-    var body: some View {
+    var filteredContacts: [Contacts] {
+        if searchText.isEmpty {
+            return contactSample
+        } else {
+            return contactSample.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+        }
+    }
 
+    var body: some View {
         NavigationStack {
             VStack {
-               Searchbar()
+                Searchbar(searchText: $searchText)
+                    .frame(width: 327, height: 36)
+                    .padding(12)
                 NavigationStack(path: $path) {
-                    List(contactSample) { contact in
-                        ProfileInList(contact: contact)
+                    switch filteredContacts {
+                    case let x where x.isEmpty == false:
+                        List(filteredContacts) { contact in
+                            ProfileInList(contact: contact)
                             .onTapGesture {
                                 path.append(contact)
+                            }
+                            .listRowBackground(Color.clear)
                         }
-                    }
-                    .navigationDestination(for: Contacts.self, destination: { contact in
+                        .navigationDestination(for: Contacts.self, destination: { contact in
                             ProfileAccountView(contact: contact)
                             .navigationBarBackButtonHidden()
                         })
-                    .padding(.horizontal, -12)
-                    .padding(.vertical, -46)
-                    .scrollContentBackground(.hidden)
+                        .padding(.top, -25)
+                        .padding(.horizontal, -12)
+                        .scrollContentBackground(.hidden)
+                    default:
+                        Text("No contacts found")
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                    }
                 }
             }
+            .background(Color("backgroundColor"))
             .toolbar {
                 ToolbarContactsList()
             }
         }
     }
 }
+
 
 
 struct ContactsView_Previews: PreviewProvider {

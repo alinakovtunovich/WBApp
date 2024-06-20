@@ -21,7 +21,7 @@ struct ToolbarContactsList: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {}) {
                     Image(systemName: "plus")
-                        .foregroundColor(.black)
+                        .foregroundColor(Color.primary)
                         .font(.system(size: 18))
                 }
                 .padding()
