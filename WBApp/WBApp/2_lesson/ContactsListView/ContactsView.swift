@@ -23,26 +23,35 @@ struct ContactsView: View {
         NavigationStack {
             VStack {
                 Searchbar(searchText: $searchText)
+                    .frame(width: 327, height: 36)
+                    .padding(12)
                 NavigationStack(path: $path) {
-                    List(filteredContacts) { contact in
-                        ProfileInList(contact: contact)
-                        .onTapGesture {
-                            path.append(contact)
+                    switch filteredContacts {
+                    case let x where x.isEmpty == false:
+                        List(filteredContacts) { contact in
+                            ProfileInList(contact: contact)
+                            .onTapGesture {
+                                path.append(contact)
+                            }
+                            .listRowBackground(Color.clear)
                         }
-                        .listRowBackground(Color.clear)
+                        .navigationDestination(for: Contacts.self, destination: { contact in
+                            ProfileAccountView(contact: contact)
+                            .navigationBarBackButtonHidden()
+                        })
+                        .padding(.top, -25)
+                        .padding(.horizontal, -12)
+                        .scrollContentBackground(.hidden)
+                    default:
+                        Text("No contacts found")
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     }
-                    .navigationDestination(for: Contacts.self, destination: { contact in
-                        ProfileAccountView(contact: contact)
-                        .navigationBarBackButtonHidden()
-                    })
-                    .padding(.horizontal, -12)
-                    .padding(.vertical, -46)
-                    .scrollContentBackground(.hidden)
                 }
             }
             .background(Color("backgroundColor"))
             .toolbar {
-            ToolbarContactsList()
+                ToolbarContactsList()
             }
         }
     }

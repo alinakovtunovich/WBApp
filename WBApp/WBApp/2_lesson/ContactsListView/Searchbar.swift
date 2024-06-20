@@ -20,12 +20,10 @@ struct Searchbar: View {
                 .foregroundColor(Color("searchFont"))
             Button(action: {}) {}
         }
-        .frame(height: 36)
+//        .frame(height: 36)
         .background(Color("profileDetails"))
         .font(.system(size: 14))
         .cornerRadius(4)
-        .padding(.horizontal, 24)
-        .padding(.vertical, 16)
     }
     
 }
