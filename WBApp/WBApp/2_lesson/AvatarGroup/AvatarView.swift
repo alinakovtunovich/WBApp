@@ -60,9 +60,6 @@ struct AvatarView: View {
         default:
             VStack {}
         }
-
-        
-
     }
 }
 

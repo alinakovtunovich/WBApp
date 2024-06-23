@@ -14,6 +14,9 @@ struct WBAppApp: App {
         WindowGroup {
 //            ContentView()
             ContactsMainView()
+//                .onAppear {
+//                    saveContactsToUserDefaults(contacts: contactSample)
+//                }
         }
     }
 }
