@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactsMainView: View {
-
+    
     var body: some View {
         Contact_TabView()
     }

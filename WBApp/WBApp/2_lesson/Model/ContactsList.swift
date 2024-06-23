@@ -15,7 +15,6 @@ public struct Contacts: Hashable, Identifiable, Codable {
     var status: Bool
     var story: Bool
     var lastOnline: Date?
-    
 }
 
 public var contactSample: [Contacts] = [
@@ -27,14 +26,5 @@ public var contactSample: [Contacts] = [
     Contacts(name: "Лиса Алиса", status: false, story: true, lastOnline: Date(timeIntervalSinceNow: -1800))
 ]
 
-
-//func saveContactsToUserDefaults(contacts: [Contacts]) {
-//    let defaults = UserDefaults(suiteName: "group.ru.ayrmidon.WBApp")
-//    let encoder = JSONEncoder()
-//    
-//    if let encoded = try? encoder.encode(contacts) {
-//        defaults?.set(encoded, forKey: "contacts")
-//    }
-//}
 
 

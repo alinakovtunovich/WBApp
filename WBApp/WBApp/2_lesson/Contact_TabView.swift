@@ -14,23 +14,56 @@ enum Tabs: Hashable {
 }
 
 struct Contact_TabView: View {
+    @EnvironmentObject var contactStore: ContactStore
+    @State private var internalSelectedTab: Tabs = .user
     
-    @State var selectedTab: Tabs = .user
+    private var chosenContactID: Int? {
+        if let chosenContact = contactStore.selectedContactID {
+            if let result = contactSample.firstIndex(where: { contact in
+                return contact.id == chosenContact
+            }) {
+                return result
+            } else {
+                return nil
+            }
+        }
+        return nil
+    }
     
+    private var selectedTab: Binding<Tabs> {
+        Binding(
+            get: {
+                if self.chosenContactID != nil {
+                    return .menu
+                } else {
+                    return .user
+                }
+            },
+            set: {
+                self.internalSelectedTab = $0
+            }
+        )
+    }
+ 
     var body: some View {
-        TabView(selection: $selectedTab, content: {
+        TabView(selection: selectedTab) {
             ContactsView().tabItem {
-                Image(selectedTab != .user ? "user" : "userselected")
+                Image(internalSelectedTab != .user ? "user" : "userselected")
             }.tag(Tabs.user)
             ContentView().tabItem {
-                Image(selectedTab != .communication ? "communication" : "communicationselected")
+                Image(internalSelectedTab != .communication ? "communication" : "communicationselected")
             }.tag(Tabs.communication)
-            ProfileAccountView(contact: contactSample[0]).tabItem {
-                Image(selectedTab != .menu ? "menu" : "menuselected")
-            }.tag(Tabs.menu)
-        })
+            if let chosenContactIndex = chosenContactID {
+                ProfileAccountView(contact: contactSample[chosenContactIndex]).tabItem {
+                    Image(internalSelectedTab != .menu ? "menu" : "menuselected")
+                }.tag(Tabs.menu)
+            } else {
+                ProfileAccountView(contact: contactSample[0]).tabItem {
+                    Image(internalSelectedTab != .menu ? "menu" : "menuselected")
+                }.tag(Tabs.menu)
+            }
+        }
     }
-        
 }
 
 struct Contact_TabView_Previews: PreviewProvider {
@@ -38,3 +71,4 @@ struct Contact_TabView_Previews: PreviewProvider {
         Contact_TabView()
     }
 }
+

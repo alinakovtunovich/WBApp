@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileInList: View {
     let contact: Contacts
-
+    
     var body: some View {
         HStack {
             AvatarView(contact: contact, localizationAvatar: "list")
@@ -29,7 +29,7 @@ extension Contacts {
     func initials() -> String {
         let words = name.components(separatedBy: " ")
         guard let firstWord = words.first, let lastWord = words.last else {
-           return ""
+            return ""
         }
         let firstInitial = String(firstWord.prefix(1))
         let lastInitial = String(lastWord.prefix(1))

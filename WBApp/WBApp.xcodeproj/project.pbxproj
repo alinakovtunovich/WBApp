@@ -25,6 +25,7 @@
 		A34769092C280C70005D777C /* ProfileInList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DCE2C1B3879000B3C36 /* ProfileInList.swift */; };
 		A347690A2C2835A1005D777C /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DD52C1B8C28000B3C36 /* AvatarView.swift */; };
 		A347690B2C283864005D777C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C0C76D82C10B7A3009985F2 /* Assets.xcassets */; };
+		A34769102C286BC0005D777C /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347690F2C286BC0005D777C /* ContactStore.swift */; };
 		A34B880E2C203F2C00F4AF82 /* ToolbarProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34B880D2C203F2C00F4AF82 /* ToolbarProfile.swift */; };
 		A34B88102C20805500F4AF82 /* Contact_TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34B880F2C20805500F4AF82 /* Contact_TabView.swift */; };
 		A34B88122C20824E00F4AF82 /* ContactsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34B88112C20824E00F4AF82 /* ContactsMainView.swift */; };
@@ -86,6 +87,7 @@
 		A3403DD02C1B86DA000B3C36 /* StoryOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryOverlay.swift; sourceTree = "<group>"; };
 		A3403DD22C1B8B7C000B3C36 /* StatusOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusOverlay.swift; sourceTree = "<group>"; };
 		A3403DD52C1B8C28000B3C36 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		A347690F2C286BC0005D777C /* ContactStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
 		A34B880D2C203F2C00F4AF82 /* ToolbarProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarProfile.swift; sourceTree = "<group>"; };
 		A34B880F2C20805500F4AF82 /* Contact_TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_TabView.swift; sourceTree = "<group>"; };
 		A34B88112C20824E00F4AF82 /* ContactsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsMainView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				A30C5BD52C183E560010C974 /* 2_lesson */,
 				2C0C76D82C10B7A3009985F2 /* Assets.xcassets */,
 				2C0C76DA2C10B7A3009985F2 /* Preview Content */,
+				A347690F2C286BC0005D777C /* ContactStore.swift */,
 			);
 			path = WBApp;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				2C0C76D72C10B7A1009985F2 /* ContentView.swift in Sources */,
 				2CD88CC02C11F58200A3C955 /* VerificationSheetScreen.swift in Sources */,
 				A3403DC92C1B323D000B3C36 /* ToolbarContactsList.swift in Sources */,
+				A34769102C286BC0005D777C /* ContactStore.swift in Sources */,
 				A30C5BD92C187BDA0010C974 /* ContactsList.swift in Sources */,
 				A3403DD62C1B8C28000B3C36 /* AvatarView.swift in Sources */,
 				A3403DC72C1B30C4000B3C36 /* ProfileAccountView.swift in Sources */,

@@ -10,23 +10,23 @@ import SwiftUI
 struct ToolbarContactsList: View {
     var body: some View {
         VStack() {}
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Text("Контакты")
-                    .font(.system(size: 18))
-                    .bold()
-                    .padding()
-                Spacer()
-            }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {}) {
-                    Image(systemName: "plus")
-                        .foregroundColor(Color.primary)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Контакты")
                         .font(.system(size: 18))
+                        .bold()
+                        .padding()
+                    Spacer()
                 }
-                .padding()
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {}) {
+                        Image(systemName: "plus")
+                            .foregroundColor(Color.primary)
+                            .font(.system(size: 18))
+                    }
+                    .padding()
+                }
             }
-        }
     }
 }
 

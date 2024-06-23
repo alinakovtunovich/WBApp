@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContactsView: View {
+    @EnvironmentObject var contactStore: ContactStore
     @State var path = [Contacts]()
     @State private var searchText = ""
     
@@ -18,7 +19,7 @@ struct ContactsView: View {
             return contactSample.filter { $0.name.lowercased().contains(searchText.lowercased()) }
         }
     }
-
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -30,14 +31,14 @@ struct ContactsView: View {
                     case let x where x.isEmpty == false:
                         List(filteredContacts) { contact in
                             ProfileInList(contact: contact)
-                            .onTapGesture {
-                                path.append(contact)
-                            }
-                            .listRowBackground(Color.clear)
+                                .onTapGesture {
+                                    path.append(contact)
+                                }
+                                .listRowBackground(Color.clear)
                         }
                         .navigationDestination(for: Contacts.self, destination: { contact in
                             ProfileAccountView(contact: contact)
-                            .navigationBarBackButtonHidden()
+                                .navigationBarBackButtonHidden()
                         })
                         .padding(.top, -25)
                         .padding(.horizontal, -12)

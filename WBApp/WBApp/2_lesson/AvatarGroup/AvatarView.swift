@@ -17,7 +17,7 @@ struct AvatarView: View {
         case "list":
             switch contact.avatar {
             case .some(let imageName):
-               Image(imageName)
+                Image(imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 48, height: 48)
@@ -39,22 +39,22 @@ struct AvatarView: View {
         case "profile":
             switch contact.avatar {
             case .some(let imageName):
-               Image(imageName)
+                Image(imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 200, height: 200)
                     .clipShape(Circle())
             default:
                 
-            ZStack {
-                Circle()
-                    .fill(Color("profileDetails"))
-                    .frame(width: 200, height: 200)
-
-                Image("profile")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 75, height: 89)
+                ZStack {
+                    Circle()
+                        .fill(Color("profileDetails"))
+                        .frame(width: 200, height: 200)
+                    
+                    Image("profile")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 75, height: 89)
                 }
             }
         default:

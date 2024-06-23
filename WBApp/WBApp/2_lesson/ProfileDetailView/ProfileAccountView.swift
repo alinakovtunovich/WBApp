@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileAccountView: View {
-    
+    @EnvironmentObject var contactStore: ContactStore
     let contact: Contacts
     var body: some View {
         ZStack {
@@ -37,19 +37,19 @@ struct ProfileAccountView: View {
     
     func button(_ image: String) -> some View {
         Button(action: {}) {
-                    Image(image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 17, height: 14)
-                        
-                }
-                .buttonStyle(PlainButtonStyle())
-                .background(Color.clear)
-                .frame(width: 72, height: 40)
-                .overlay(Capsule().stroke(Color("brandButtonColor"), lineWidth: 4))
-                .cornerRadius(25)
+            Image(image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 17, height: 14)
+            
+        }
+        .buttonStyle(PlainButtonStyle())
+        .background(Color.clear)
+        .frame(width: 72, height: 40)
+        .overlay(Capsule().stroke(Color("brandButtonColor"), lineWidth: 4))
+        .cornerRadius(25)
     }
-
+    
 }
 
 struct ProfileAccountView_Previews: PreviewProvider {
