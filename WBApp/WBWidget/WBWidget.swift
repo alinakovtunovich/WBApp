@@ -3,133 +3,97 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
+    
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+        SimpleEntry(date: Date(), configuration: ConfigurationIntent(), theme: .light)
     }
     
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+        let theme = configuration.theme == .light ? ColorScheme.light : ColorScheme.dark
+        let entry = SimpleEntry(date: Date(), configuration: configuration, theme: theme)
         completion(entry)
     }
     
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+        let theme = configuration.theme == .light ? ColorScheme.light : ColorScheme.dark
         var entries: [SimpleEntry] = []
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
+       
+        
+        if let contactID = configuration.contactID, UUID(uuidString: contactID) != nil {
+            for hourOffset in stride(from: 0, to: 24, by: 3) {
+                let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
+                let entry = SimpleEntry(date: entryDate, configuration: configuration, theme: theme)
+                entries.append(entry)
+            }
+        } else {
+            for hourOffset in stride(from: 0, to: 24, by: 3) {
+                let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
+                let entry = SimpleEntry(date: entryDate, configuration: configuration, theme: theme)
+                entries.append(entry)
+            }
         }
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 }
 
+
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
+    let theme: ColorScheme
 }
 
 struct WBWidgetEntryView: View {
+    @EnvironmentObject var contactStore: ContactStore
     var entry: Provider.Entry
     @Environment(\.widgetFamily) var widgetFamily
+    
     
     var body: some View {
         ZStack {
             Color("backgroundColor")
                 .edgesIgnoringSafeArea(.all)
+                .environment(\.colorScheme, entry.theme)
             switch widgetFamily {
             case .systemSmall:
-                smallWidgetView
+                SmallWidgetView(entry: entry)
                     .padding()
             case .systemMedium:
-                mediumWidgetView
+                MediumWidgetView(entry: entry)
                     .padding()
             case .systemLarge:
-                largeWidgetView
+                LargeWidgetView(entry: entry)
                     .padding()
             default:
-                smallWidgetView
+                SmallWidgetView(entry: entry)
                     .padding()
             }
         }
-    }
-    
-    // Вид для маленького виджета
-    private var smallWidgetView: some View {
-        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-            ForEach(contactSample.filter { $0.status }.prefix(4)) { contact in
-                contactAvatarView(contact: contact)
-            }
+        .onOpenURL { url in
+            handleURL(url)
         }
     }
     
-    // Вид для среднего виджета
-    private var mediumWidgetView: some View {
-        VStack(alignment: .leading) {
-            ForEach(contactSample.filter { $0.status }.prefix(2)) { contact in
-                HStack(alignment: .top, spacing: 10) {
-                    contactAvatarView(contact: contact)
-                    VStack(alignment: .leading) {
-                        Text(contact.name)
-                            .bold().font(.system(size: 14))
-                            .padding(.vertical, 1)
-                        Text("Online")
-                            .font(.system(size: 12))
-                            .foregroundColor(Color.gray)
+    private func handleURL(_ url: URL) {
+        
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return }
+        
+        if url.scheme == "myapp" {
+            
+            if let contactID = components.path.components(separatedBy: "/").last,
+               let id = UUID(uuidString: contactID) {
+                contactStore.selectedContactID = id
+            } else if let queryItems = components.queryItems {
+                for queryItem in queryItems {
+                    if queryItem.name == "contactID", let contactID = queryItem.value {
+                        contactStore.selectedContactID = UUID(uuidString: contactID)
+                        break
                     }
-                    Spacer()
                 }
             }
         }
-    }
-    
-    // Вид для большого виджета
-    private var largeWidgetView: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            ForEach(contactSample.prefix(5)) { contact in
-                HStack(alignment: .top, spacing: 10) {
-                    contactAvatarView(contact: contact)
-                    VStack(alignment: .leading) {
-                        Text(contact.name)
-                            .bold().font(.system(size: 14))
-                            .padding(.vertical, 1)
-                        Text(contact.status ? "Online" : contact.lastOnline?.lastOnlineAgo() ?? "")
-                            .font(.system(size: 12))
-                            .foregroundColor(Color.gray)
-                    }
-                    Spacer()
-                }
-            }
-        }
-    }
-    
-    // Вид аватарки контакта
-    @ViewBuilder
-    private func contactAvatarView(contact: Contacts) -> some View {
-        Group {
-            if let imageName = contact.avatar {
-                Image(imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 48, height: 48)
-                    .cornerRadius(16)
-                    .padding(2)
-                    .overlay(StoryOverlay(contact: contact))
-                    .overlay(StatusOverlay(contact: contact))
-            } else {
-                Text(contact.initials())
-                    .foregroundColor(.white)
-                    .font(.system(size: 14, weight: .bold))
-                    .frame(width: 48, height: 48)
-                    .background(Color("avatarColor"))
-                    .cornerRadius(16)
-                    .padding(2)
-                    .overlay(StoryOverlay(contact: contact))
-                    .overlay(StatusOverlay(contact: contact))
-            }
-        }
-        .widgetURL(URL(string: "myapp://profile/\(contact.id.uuidString)"))
     }
 }
 
@@ -140,14 +104,14 @@ struct WBWidget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             WBWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Виджет для WBApp")
+        .description("Виджет покажет список онлайн/всех контактов с возможностью перехода к конкретному профилю.")
     }
 }
 
 struct WBWidget_Previews: PreviewProvider {
     static var previews: some View {
-        WBWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+        WBWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), theme: .dark))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

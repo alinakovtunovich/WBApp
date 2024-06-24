@@ -33,18 +33,14 @@ struct Contact_TabView: View {
     private var selectedTab: Binding<Tabs> {
         Binding(
             get: {
-                if self.chosenContactID != nil {
-                    return .menu
-                } else {
-                    return .user
-                }
+                if self.chosenContactID != nil { return .menu } else { return .user }
             },
             set: {
                 self.internalSelectedTab = $0
             }
         )
     }
- 
+    
     var body: some View {
         TabView(selection: selectedTab) {
             ContactsView().tabItem {
@@ -53,18 +49,13 @@ struct Contact_TabView: View {
             ContentView().tabItem {
                 Image(internalSelectedTab != .communication ? "communication" : "communicationselected")
             }.tag(Tabs.communication)
-            if let chosenContactIndex = chosenContactID {
-                ProfileAccountView(contact: contactSample[chosenContactIndex]).tabItem {
-                    Image(internalSelectedTab != .menu ? "menu" : "menuselected")
-                }.tag(Tabs.menu)
-            } else {
-                ProfileAccountView(contact: contactSample[0]).tabItem {
-                    Image(internalSelectedTab != .menu ? "menu" : "menuselected")
-                }.tag(Tabs.menu)
-            }
+            ProfileAccountView(contact: contactSample[chosenContactID ?? 0]).tabItem {
+                Image(internalSelectedTab != .menu ? "menu" : "menuselected")
+            }.tag(Tabs.menu)
         }
     }
 }
+
 
 struct Contact_TabView_Previews: PreviewProvider {
     static var previews: some View {
