@@ -32,12 +32,14 @@ class Person {
     let name: String
     let surname: String
     var dateOfBorn: String
+    var age: Int
     weak var passport: Passport?
     
-    init(name: String, surname: String, dateOfBorn: String, passport: Passport? = nil) {
+    init(name: String, surname: String, dateOfBorn: String, age: Int, passport: Passport? = nil) {
         self.name = name
         self.surname = surname
         self.dateOfBorn = dateOfBorn
+        self.age = age
         self.passport = passport
         print("Person \(name) \(surname) is initialized")
     }
@@ -71,7 +73,7 @@ class Factory {
     private(set) var clients: [Person]
     private(set) var staff: [Passport]
     private(set) var orders: [Order]
-
+    
     init(name: String) {
         self.name = name
         self.clients = []
@@ -87,7 +89,7 @@ class Factory {
     func addStaff(_ passport: Passport) {
         staff.append(passport)
     }
-
+    
     func addOrder(_ order: Order) {
         orders.append(order)
     }
@@ -106,7 +108,7 @@ class Factory {
         let staffDetails = staff.map { "\($0.series) \($0.number): \($0.person?.name ?? "") \($0.person?.surname ?? "")" }.joined(separator: "\n    ")
         let clientDetails = clients.map { "\($0.name) \($0.surname)" }.joined(separator: "\n    ")
         let orderDetails = orders.map { "\($0.id.uuidString) - \($0.material) (\($0.quantity))" }.joined(separator: "\n    ")
-
+        
         print("""
             Factory Name: \(name)
             Staff:
@@ -123,26 +125,39 @@ class Factory {
     }
 }
 
-func test() {
-    let factory = Factory(name: "New Leroy Merlin")
 
-    let clientIvanov = Person(name: "Иван", surname: "Иванов", dateOfBorn: "24.05.1991")
-    factory.addClient(clientIvanov)
+var factory: Factory? = Factory(name: "New Leroy Merlin")
 
-    let workerPetrov = Person(name: "Семён", surname: "Петров", dateOfBorn: "12.12.1989")
-    let passportPetrov = Passport(series: "5027", number: "125-973", dateIssue: "20.12.2019", person: workerPetrov)
-    factory.addStaff(passportPetrov)
+// Создание и добавление клиента в базу
+var clientIvanov: Person? = Person(name: "Иван", surname: "Иванов", dateOfBorn: "24.05.1991", age: 33)
+factory?.addClient(clientIvanov!)
 
-    var order = Order(material: "Плитка", quantity: 255, unitPrice: 468.0, isReady: false, client: clientIvanov)
-    factory.addOrder(order)
-    
-    factory.printFactoryDetails()
-    
-    factory.updateOrder(orderId: order.id, newQuantity: 300)
-    factory.updateOrder(orderId: order.id, newUnitPrice: 450.0)
-    
-    factory.printFactoryDetails()
-}
+// Создание и добавление работника и его паспорта в базу
+var workerPetrov: Person? = Person(name: "Семён", surname: "Петров", dateOfBorn: "12.12.1989", age: 34)
+var passportPetrov: Passport? = Passport(series: "5027", number: "125-973", dateIssue: "20.12.2019", person: workerPetrov!)
+factory?.addStaff(passportPetrov!)
 
-test()
+// Создание и добавление заказа
+var order: Order? = Order(material: "Плитка", quantity: 255, unitPrice: 468.0, isReady: false, client: clientIvanov!)
+factory?.addOrder(order!)
+
+factory?.printFactoryDetails()
+
+// Изменение заказа
+factory?.updateOrder(orderId: order!.id, newQuantity: 300)
+factory?.updateOrder(orderId: order!.id, newUnitPrice: 450.0)
+
+factory?.printFactoryDetails()
+
+// Удаление заказа
+factory?.cancelOrder(by: order!.id)
+
+
+// nil для проверки deinit
+passportPetrov = nil
+workerPetrov = nil
+clientIvanov = nil
+factory = nil
+
+Thread.sleep(forTimeInterval: 1.0)
 
