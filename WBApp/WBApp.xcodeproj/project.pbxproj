@@ -46,7 +46,7 @@
 		A3973FE92C2D898B006488F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3973FE82C2D898B006488F6 /* Preview Assets.xcassets */; };
 		A3973FEE2C2D8FC4006488F6 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3973FED2C2D8FC4006488F6 /* PickerView.swift */; };
 		A3973FF02C2D93AE006488F6 /* LanguagePick.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3973FEF2C2D93AE006488F6 /* LanguagePick.swift */; };
-		A3973FF22C2D9C15006488F6 /* TextExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3973FF12C2D9C15006488F6 /* TextExtention.swift */; };
+		A3973FF42C2EC890006488F6 /* FormattedDatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3973FF32C2EC890006488F6 /* FormattedDatesView.swift */; };
 		A3C5E91E2C274091008E6912 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C5E91D2C274090008E6912 /* WidgetKit.framework */; };
 		A3C5E9202C274091008E6912 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C5E91F2C274091008E6912 /* SwiftUI.framework */; };
 		A3C5E9232C274091008E6912 /* WBWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5E9222C274091008E6912 /* WBWidgetBundle.swift */; };
@@ -142,7 +142,7 @@
 		A3973FE82C2D898B006488F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A3973FED2C2D8FC4006488F6 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		A3973FEF2C2D93AE006488F6 /* LanguagePick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePick.swift; sourceTree = "<group>"; };
-		A3973FF12C2D9C15006488F6 /* TextExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtention.swift; sourceTree = "<group>"; };
+		A3973FF32C2EC890006488F6 /* FormattedDatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattedDatesView.swift; sourceTree = "<group>"; };
 		A3C5E91B2C274090008E6912 /* WBWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WBWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C5E91D2C274090008E6912 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A3C5E91F2C274091008E6912 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -340,10 +340,10 @@
 				A3973FE12C2D8985006488F6 /* CalendarApp.swift */,
 				A3973FE32C2D8985006488F6 /* ContentView.swift */,
 				A3973FED2C2D8FC4006488F6 /* PickerView.swift */,
+				A3973FEF2C2D93AE006488F6 /* LanguagePick.swift */,
+				A3973FF32C2EC890006488F6 /* FormattedDatesView.swift */,
 				A3973FE52C2D898B006488F6 /* Assets.xcassets */,
 				A3973FE72C2D898B006488F6 /* Preview Content */,
-				A3973FEF2C2D93AE006488F6 /* LanguagePick.swift */,
-				A3973FF12C2D9C15006488F6 /* TextExtention.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -599,9 +599,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3973FF42C2EC890006488F6 /* FormattedDatesView.swift in Sources */,
 				A3973FE42C2D8985006488F6 /* ContentView.swift in Sources */,
 				A3973FEE2C2D8FC4006488F6 /* PickerView.swift in Sources */,
-				A3973FF22C2D9C15006488F6 /* TextExtention.swift in Sources */,
 				A3973FE22C2D8985006488F6 /* CalendarApp.swift in Sources */,
 				A3973FF02C2D93AE006488F6 /* LanguagePick.swift in Sources */,
 			);

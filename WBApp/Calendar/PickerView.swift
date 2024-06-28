@@ -9,20 +9,22 @@ import SwiftUI
 
 struct PickerView: View {
     @State private var selectedDate = Date()
-    @State private var selectedLanguage: LanguagePick = .rus
+    @State private var selectedLanguage: LanguagePick = .eng
     
     var body: some View {
         VStack {
             
+            Text("🌍📆").font(.system(size: 100))
+            Divider()
             DatePicker(selection: $selectedDate, displayedComponents: .date) {
                 Text("Select a date")
-                    .font(.title)
+                    .font(.title2)
             }
             .datePickerStyle(.compact)
-            .padding(40)
+            .padding(30)
             
             Text("Select a language")
-                .font(.title)
+                .font(.title2)
             
             Picker("", selection: $selectedLanguage) {
                 ForEach(LanguagePick.allCases) { category in
@@ -31,7 +33,10 @@ struct PickerView: View {
             }
             .pickerStyle(.segmented)
             .padding(20)
-            
+            Divider()
+            FormattedDatesView(selectedDate: selectedDate, selectedLanguage: selectedLanguage)
+                .padding()
+            Divider()
         }
     }
 }
