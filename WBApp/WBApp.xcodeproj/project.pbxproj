@@ -15,6 +15,14 @@
 		2CD88CC02C11F58200A3C955 /* VerificationSheetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD88CBF2C11F58200A3C955 /* VerificationSheetScreen.swift */; };
 		A30C5BD72C1840080010C974 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C5BD62C1840080010C974 /* ContactsView.swift */; };
 		A30C5BD92C187BDA0010C974 /* ContactsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C5BD82C187BDA0010C974 /* ContactsList.swift */; };
+		A31CB7F22C302E5A00760B11 /* ScrollAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CB7F12C302E5A00760B11 /* ScrollAppApp.swift */; };
+		A31CB7F42C302E5A00760B11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CB7F32C302E5A00760B11 /* ContentView.swift */; };
+		A31CB7F62C302E5E00760B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31CB7F52C302E5E00760B11 /* Assets.xcassets */; };
+		A31CB7F92C302E5E00760B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31CB7F82C302E5E00760B11 /* Preview Assets.xcassets */; };
+		A31CB7FE2C33E51F00760B11 /* EmojiItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CB7FD2C33E51F00760B11 /* EmojiItem.swift */; };
+		A31CB8022C34174E00760B11 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CB8012C34174E00760B11 /* CellView.swift */; };
+		A31CB8052C3418AD00760B11 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CB8042C3418AD00760B11 /* Cell.swift */; };
+		A31CB8072C343D9D00760B11 /* EmojiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CB8062C343D9D00760B11 /* EmojiViewModel.swift */; };
 		A3403DC72C1B30C4000B3C36 /* ProfileAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DC62C1B30C4000B3C36 /* ProfileAccountView.swift */; };
 		A3403DC92C1B323D000B3C36 /* ToolbarContactsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DC82C1B323D000B3C36 /* ToolbarContactsList.swift */; };
 		A3403DCB2C1B374E000B3C36 /* Searchbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DCA2C1B374E000B3C36 /* Searchbar.swift */; };
@@ -115,6 +123,15 @@
 		2CD88CBF2C11F58200A3C955 /* VerificationSheetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationSheetScreen.swift; sourceTree = "<group>"; };
 		A30C5BD62C1840080010C974 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		A30C5BD82C187BDA0010C974 /* ContactsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsList.swift; sourceTree = "<group>"; };
+		A31CB7EF2C302E5A00760B11 /* ScrollApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A31CB7F12C302E5A00760B11 /* ScrollAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollAppApp.swift; sourceTree = "<group>"; };
+		A31CB7F32C302E5A00760B11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A31CB7F52C302E5E00760B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A31CB7F82C302E5E00760B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A31CB7FD2C33E51F00760B11 /* EmojiItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiItem.swift; sourceTree = "<group>"; };
+		A31CB8012C34174E00760B11 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		A31CB8042C3418AD00760B11 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		A31CB8062C343D9D00760B11 /* EmojiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewModel.swift; sourceTree = "<group>"; };
 		A3403DC52C1B2B05000B3C36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A3403DC62C1B30C4000B3C36 /* ProfileAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAccountView.swift; sourceTree = "<group>"; };
 		A3403DC82C1B323D000B3C36 /* ToolbarContactsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarContactsList.swift; sourceTree = "<group>"; };
@@ -164,6 +181,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A31CB7EC2C302E5A00760B11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A34365F72C29D23300F6CB75 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,6 +230,7 @@
 				A34365FB2C29D23300F6CB75 /* Bank */,
 				A3973FD52C2C3CCD006488F6 /* Factory */,
 				A3973FE02C2D8985006488F6 /* Calendar */,
+				A31CB7F02C302E5A00760B11 /* ScrollApp */,
 				A3C5E91C2C274090008E6912 /* Frameworks */,
 				2C0C76D22C10B7A1009985F2 /* Products */,
 			);
@@ -219,6 +244,7 @@
 				A34365FA2C29D23300F6CB75 /* Bank */,
 				A3973FD42C2C3CCD006488F6 /* Factory */,
 				A3973FDF2C2D8984006488F6 /* Calendar.app */,
+				A31CB7EF2C302E5A00760B11 /* ScrollApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -257,6 +283,29 @@
 				A34B88112C20824E00F4AF82 /* ContactsMainView.swift */,
 			);
 			path = 2_lesson;
+			sourceTree = "<group>";
+		};
+		A31CB7F02C302E5A00760B11 /* ScrollApp */ = {
+			isa = PBXGroup;
+			children = (
+				A31CB7F12C302E5A00760B11 /* ScrollAppApp.swift */,
+				A31CB7F52C302E5E00760B11 /* Assets.xcassets */,
+				A31CB7F72C302E5E00760B11 /* Preview Content */,
+				A31CB7FD2C33E51F00760B11 /* EmojiItem.swift */,
+				A31CB8062C343D9D00760B11 /* EmojiViewModel.swift */,
+				A31CB7F32C302E5A00760B11 /* ContentView.swift */,
+				A31CB8042C3418AD00760B11 /* Cell.swift */,
+				A31CB8012C34174E00760B11 /* CellView.swift */,
+			);
+			path = ScrollApp;
+			sourceTree = "<group>";
+		};
+		A31CB7F72C302E5E00760B11 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A31CB7F82C302E5E00760B11 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		A3403DCC2C1B37F8000B3C36 /* Model */ = {
@@ -401,6 +450,23 @@
 			productReference = 2C0C76D12C10B7A1009985F2 /* WBApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A31CB7EE2C302E5A00760B11 /* ScrollApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A31CB7FC2C302E5E00760B11 /* Build configuration list for PBXNativeTarget "ScrollApp" */;
+			buildPhases = (
+				A31CB7EB2C302E5A00760B11 /* Sources */,
+				A31CB7EC2C302E5A00760B11 /* Frameworks */,
+				A31CB7ED2C302E5A00760B11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScrollApp;
+			productName = ScrollApp;
+			productReference = A31CB7EF2C302E5A00760B11 /* ScrollApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A34365F92C29D23300F6CB75 /* Bank */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A34366002C29D23300F6CB75 /* Build configuration list for PBXNativeTarget "Bank" */;
@@ -482,6 +548,9 @@
 					2C0C76D02C10B7A1009985F2 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
+					A31CB7EE2C302E5A00760B11 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					A34365F92C29D23300F6CB75 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -514,6 +583,7 @@
 				A34365F92C29D23300F6CB75 /* Bank */,
 				A3973FD32C2C3CCD006488F6 /* Factory */,
 				A3973FDE2C2D8984006488F6 /* Calendar */,
+				A31CB7EE2C302E5A00760B11 /* ScrollApp */,
 			);
 		};
 /* End PBXProject section */
@@ -525,6 +595,15 @@
 			files = (
 				2C0C76DC2C10B7A3009985F2 /* Preview Assets.xcassets in Resources */,
 				2C0C76D92C10B7A3009985F2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A31CB7ED2C302E5A00760B11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A31CB7F92C302E5E00760B11 /* Preview Assets.xcassets in Resources */,
+				A31CB7F62C302E5E00760B11 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +655,19 @@
 				A3600C262C2987D1004DCEA3 /* ContactAvatarView.swift in Sources */,
 				2C0C76E32C10B80A009985F2 /* WalkThroughtScreen.swift in Sources */,
 				A34B880E2C203F2C00F4AF82 /* ToolbarProfile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A31CB7EB2C302E5A00760B11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A31CB7F42C302E5A00760B11 /* ContentView.swift in Sources */,
+				A31CB8022C34174E00760B11 /* CellView.swift in Sources */,
+				A31CB8052C3418AD00760B11 /* Cell.swift in Sources */,
+				A31CB8072C343D9D00760B11 /* EmojiViewModel.swift in Sources */,
+				A31CB7FE2C33E51F00760B11 /* EmojiItem.swift in Sources */,
+				A31CB7F22C302E5A00760B11 /* ScrollAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +910,64 @@
 			};
 			name = Release;
 		};
+		A31CB7FA2C302E5E00760B11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ScrollApp/Preview Content\"";
+				DEVELOPMENT_TEAM = GR465RHT3M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = alinakovtunovich.ScrollApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A31CB7FB2C302E5E00760B11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ScrollApp/Preview Content\"";
+				DEVELOPMENT_TEAM = GR465RHT3M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = alinakovtunovich.ScrollApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		A34365FE2C29D23300F6CB75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1003,6 +1153,15 @@
 			buildConfigurations = (
 				2C0C76E02C10B7A3009985F2 /* Debug */,
 				2C0C76E12C10B7A3009985F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A31CB7FC2C302E5E00760B11 /* Build configuration list for PBXNativeTarget "ScrollApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A31CB7FA2C302E5E00760B11 /* Debug */,
+				A31CB7FB2C302E5E00760B11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
