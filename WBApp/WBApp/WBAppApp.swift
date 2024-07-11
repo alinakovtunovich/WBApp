@@ -16,12 +16,12 @@ struct WBAppApp: App {
     var body: some Scene {
         
         WindowGroup {
-            // ContentView()
-            ContactsMainView()
-                .environmentObject(contactStore)
-                .onOpenURL { url in
-                    handleURL(url)
-                }
+             ContentView()
+//            ContactsMainView()
+//                .environmentObject(contactStore)
+//                .onOpenURL { url in
+//                    handleURL(url)
+//                }
         }
     }
     

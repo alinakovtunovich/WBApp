@@ -9,16 +9,27 @@
 import SwiftUI
 
 struct WalkThroughtScreen: View {
-    @State private var startVarification = false
+    @State private var startVerification = false
+    @State private var path = NavigationPath()
     
     var body: some View {
-        VStack {
-            illustration
-            text
-            firstButton
-            mainButton
+        NavigationStack(path: $path) {
+            ZStack {
+                Color("backgroundColor").edgesIgnoringSafeArea(.all)
+                VStack {
+                    illustration
+                    text
+                    firstButton
+                    mainButton
+                }
+                .navigationDestination(isPresented: $startVerification) {
+                    ZStack {
+                        Color("backgroundColor").edgesIgnoringSafeArea(.all)
+                        AuthView()
+                    }
+                }
+            }
         }
-        .sheet(isPresented: $startVarification) { VerificationSheetScreen() }
     }
 }
 
@@ -26,16 +37,16 @@ extension WalkThroughtScreen {
     
     var mainButton: some View {
         Button("Начать общаться") {
-            startVarification = true
+            startVerification = true
         }
-            .font(.system(size: 16))
-            .frame(width: 327, height: 52)
-            .fontWeight(.bold)
-            .foregroundColor(Color("fontButtonColor"))
-            .background(Color("brandButtonColor"))
-            .cornerRadius(30)
-            .multilineTextAlignment(.center)
-            .offset(x: 0, y: 120)
+        .font(.system(size: 16))
+        .frame(width: 327, height: 52)
+        .fontWeight(.bold)
+        .foregroundColor(Color("fontButtonColor"))
+        .background(Color("brandButtonColor"))
+        .cornerRadius(30)
+        .multilineTextAlignment(.center)
+        .offset(x: 0, y: 120)
     }
     
     var illustration: some View {
@@ -56,10 +67,9 @@ extension WalkThroughtScreen {
     }
     
     var firstButton: some View {
-        Button("Пользовательское соглашение"){}
-            .font(.system(size: 14))
-            .frame(width: 280)
-            .fontWeight(.bold)
+        Button("Нажимая кнопку продолжить я соглашаюсь с\nПолитикой Конфиденциальности и Условиями Использования"){}
+            .font(.system(size: 10))
+            .frame(width: 350)
             .foregroundColor(Color("fontColor"))
             .multilineTextAlignment(.center)
             .offset(x: 0, y: 100)

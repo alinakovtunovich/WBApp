@@ -1,0 +1,54 @@
+//
+//  Verification.swift
+//  WBApp
+//
+//  Created by Аlina Кovtunovich on 09.07.2024.
+//
+
+import SwiftUI
+
+
+struct AuthView: View {
+    @Environment(\.dismiss) private var dismiss
+    @State private var phoneNumber: String = ""
+    @State private var isLoading: Bool = false
+    @State private var isPhoneValid: Bool = false
+    
+    let validator = Validator()
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            AuthTextView()
+            PhoneField(phoneNumber: $phoneNumber, isPhoneValid: $isPhoneValid, validator: validator)
+            if !phoneNumber.isEmpty && !isPhoneValid {
+                Text("Неверный номер телефона")
+                    .foregroundColor(.red)
+                    .padding(.top, 5)
+            }
+            Spacer()
+            AuthButton(isLoading: $isLoading, phoneNumber: $phoneNumber, isPhoneValid: $isPhoneValid)
+            Spacer()
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: backButton)
+    }
+}
+
+
+extension AuthView {
+    private var backButton: some View {
+        Button(action: {
+            dismiss()
+        }) {
+            Image(systemName: "chevron.left")
+                .foregroundColor(Color("fontColor"))
+        }
+    }
+}
+
+struct AuthView_Previews: PreviewProvider {
+    static var previews: some View {
+        AuthView()
+    }
+}
