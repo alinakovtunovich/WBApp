@@ -45,6 +45,8 @@
 		A3542BDC2C425106000918B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3542BDB2C425105000918B8 /* Localizable.strings */; };
 		A3542BDE2C425136000918B8 /* UIConstants+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3542BDD2C425136000918B8 /* UIConstants+Modifier.swift */; };
 		A3542BE42C4531A7000918B8 /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347690F2C286BC0005D777C /* ContactStore.swift */; };
+		A3542BE62C453295000918B8 /* VerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3542BE52C453295000918B8 /* VerificationCodeView.swift */; };
+		A3542BEA2C453424000918B8 /* VerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3542BE92C453424000918B8 /* VerificationCode.swift */; };
 		A3600C1D2C2986B1004DCEA3 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3600C1C2C2986B1004DCEA3 /* SmallWidgetView.swift */; };
 		A3600C1E2C2986B1004DCEA3 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3600C1C2C2986B1004DCEA3 /* SmallWidgetView.swift */; };
 		A3600C202C298743004DCEA3 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3600C1F2C298743004DCEA3 /* MediumWidgetView.swift */; };
@@ -157,7 +159,9 @@
 		A34B880F2C20805500F4AF82 /* Contact_TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_TabView.swift; sourceTree = "<group>"; };
 		A34B88112C20824E00F4AF82 /* ContactsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsMainView.swift; sourceTree = "<group>"; };
 		A3542BDB2C425105000918B8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		A3542BDD2C425136000918B8 /* UIConstants+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIConstants+Modifier.swift"; path = "../1_lesson/UIConstants+Modifier.swift"; sourceTree = "<group>"; };
+		A3542BDD2C425136000918B8 /* UIConstants+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIConstants+Modifier.swift"; path = "/Users/alinakovtunovich/Desktop/WBApp/WBApp/WBApp/Main/UIConstants+Modifier.swift"; sourceTree = "<absolute>"; };
+		A3542BE52C453295000918B8 /* VerificationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeView.swift; sourceTree = "<group>"; };
+		A3542BE92C453424000918B8 /* VerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCode.swift; sourceTree = "<group>"; };
 		A3600C1C2C2986B1004DCEA3 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		A3600C1F2C298743004DCEA3 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
 		A3600C222C298786004DCEA3 /* LargeWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidgetView.swift; sourceTree = "<group>"; };
@@ -264,9 +268,8 @@
 		2C0C76D32C10B7A1009985F2 /* WBApp */ = {
 			isa = PBXGroup;
 			children = (
-				A3542BE22C453014000918B8 /* View */,
+				A3542BE82C4532DB000918B8 /* Authentication */,
 				A3542BE02C452FA6000918B8 /* Main */,
-				A3542BDF2C452F75000918B8 /* Utils */,
 				A3C5E9352C2740B5008E6912 /* WBApp.entitlements */,
 				A3403DC52C1B2B05000B3C36 /* Info.plist */,
 				A30C5BD52C183E560010C974 /* Contacts */,
@@ -372,7 +375,6 @@
 			children = (
 				A33508102C3FDBA800FC37D2 /* Validator.swift */,
 				A3542BDB2C425105000918B8 /* Localizable.strings */,
-				A3542BDD2C425136000918B8 /* UIConstants+Modifier.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -380,6 +382,7 @@
 		A3542BE02C452FA6000918B8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A3542BDD2C425136000918B8 /* UIConstants+Modifier.swift */,
 				2C0C76D42C10B7A1009985F2 /* WBAppApp.swift */,
 				2C0C76D62C10B7A1009985F2 /* ContentView.swift */,
 			);
@@ -410,8 +413,27 @@
 		A3542BE32C453177000918B8 /* CodeAuthentication */ = {
 			isa = PBXGroup;
 			children = (
+				A3542BE52C453295000918B8 /* VerificationCodeView.swift */,
 			);
 			path = CodeAuthentication;
+			sourceTree = "<group>";
+		};
+		A3542BE72C4532C5000918B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3542BE92C453424000918B8 /* VerificationCode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A3542BE82C4532DB000918B8 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A3542BDF2C452F75000918B8 /* Utils */,
+				A3542BE22C453014000918B8 /* View */,
+				A3542BE72C4532C5000918B8 /* Model */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		A3600C1B2C29868B004DCEA3 /* WidgetSize */ = {
@@ -685,6 +707,7 @@
 			files = (
 				A335080F2C3D5A0100FC37D2 /* AuthView.swift in Sources */,
 				A33508172C4002D100FC37D2 /* AuthButton.swift in Sources */,
+				A3542BE62C453295000918B8 /* VerificationCodeView.swift in Sources */,
 				A33508132C40026000FC37D2 /* AuthTextView.swift in Sources */,
 				A3C5E9382C274B9D008E6912 /* WBWidget.swift in Sources */,
 				A34B88122C20824E00F4AF82 /* ContactsMainView.swift in Sources */,
@@ -703,6 +726,7 @@
 				A3403DD32C1B8B7C000B3C36 /* StatusOverlay.swift in Sources */,
 				A34B88102C20805500F4AF82 /* Contact_TabView.swift in Sources */,
 				A30C5BD72C1840080010C974 /* ContactsView.swift in Sources */,
+				A3542BEA2C453424000918B8 /* VerificationCode.swift in Sources */,
 				A3C5E92D2C27409A008E6912 /* WBWidget.intentdefinition in Sources */,
 				A3403DCF2C1B3879000B3C36 /* ProfileInList.swift in Sources */,
 				A3600C262C2987D1004DCEA3 /* ContactAvatarView.swift in Sources */,

@@ -11,7 +11,7 @@ struct AuthTextView: View {
     var body: some View {
         Group {
             Text(NSLocalizedString("Enter phone number", comment: ""))
-                .font(.system(size: 24))
+                .font(.system(size: UIConstants.textFontSize))
                 .padding(.bottom, 5)
                 .foregroundColor(UIConstants.fontColor)
                 .bold()

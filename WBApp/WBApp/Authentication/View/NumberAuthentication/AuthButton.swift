@@ -11,6 +11,7 @@ struct AuthButton: View {
     @Binding var isLoading: Bool
     @Binding var phoneNumber: String
     @Binding var isPhoneValid: Bool
+    @Binding var isNavigating: Bool
     
     var body: some View {
         Button(action: {
@@ -18,9 +19,10 @@ struct AuthButton: View {
                 withAnimation {
                     isLoading = true
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     withAnimation {
                         isLoading = false
+                        isNavigating = true
                     }
                 }
             }
@@ -49,8 +51,9 @@ struct AuthButton: View {
 }
 
 
+
 struct AuthButton_Previews: PreviewProvider {
     static var previews: some View {
-        AuthButton(isLoading: .constant(false), phoneNumber: .constant("999 999-99-99"), isPhoneValid: .constant(false))
+        AuthButton(isLoading: .constant(false), phoneNumber: .constant("999 999-99-99"), isPhoneValid: .constant(false), isNavigating: .constant(false))
     }
 }
