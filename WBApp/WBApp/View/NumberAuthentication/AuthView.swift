@@ -1,5 +1,5 @@
 //
-//  Verification.swift
+//  AuthView.swift
 //  WBApp
 //
 //  Created by Аlina Кovtunovich on 09.07.2024.
