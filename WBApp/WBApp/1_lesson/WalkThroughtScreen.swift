@@ -3,66 +3,72 @@
 //  WBApp
 //
 //  Created by Ayrmidon Hagraven on 6/5/24.
+//  resave
 //
 
 import SwiftUI
 
 struct WalkThroughtScreen: View {
-    @State private var startVarification = false
+    @State private var startVerification = false
+    @State private var path = NavigationPath()
     
     var body: some View {
-        VStack {
-            illustration
-            text
-            firstButton
-            mainButton
+        NavigationStack(path: $path) {
+            ZStack {
+                UIConstants.backgroundAppColor.edgesIgnoringSafeArea(.all)
+                VStack {
+                    illustration
+                    text
+                    firstButton
+                    mainButton
+                }
+                .navigationDestination(isPresented: $startVerification) {
+                    ZStack {
+                        UIConstants.backgroundAppColor.edgesIgnoringSafeArea(.all)
+                        AuthView()
+                    }
+                }
+            }
         }
-        .sheet(isPresented: $startVarification) { VerificationSheetScreen() }
     }
 }
 
 extension WalkThroughtScreen {
     
     var mainButton: some View {
-        Button("Начать общаться") {
-            startVarification = true
+        Button(NSLocalizedString("StartChatting", comment: "")) {
+            startVerification = true
         }
-            .font(.system(size: 16))
-            .frame(width: 327, height: 52)
-            .fontWeight(.bold)
-            .foregroundColor(Color("fontButtonColor"))
-            .background(Color("brandButtonColor"))
-            .cornerRadius(30)
-            .multilineTextAlignment(.center)
-            .offset(x: 0, y: 120)
+        .customButtonStyle()
+        .offset(x: 0, y: UIConstants.offsetY)
     }
     
     var illustration: some View {
         Image("Image")
             .resizable()
-            .frame(width: 262, height: 271)
-            .offset(x: 0, y: -119)
+            .frame(width: UIConstants.illustrationWidth, height: UIConstants.illustrationHeight)
+            .offset(x: 0, y: -UIConstants.offsetY)
     }
     
     var text: some View {
-        Text("Общайтесь с друзьями и близкими легко")
-            .font(.system(size: 24))
-            .frame(width: 280)
+        Text(NSLocalizedString("TalkWithFriends", comment: ""))
+            .font(.system(size: UIConstants.textFontSize))
+            .frame(width: UIConstants.textWidth)
             .fontWeight(.bold)
-            .foregroundColor(Color("fontColor"))
+            .foregroundColor(UIConstants.fontColor)
             .multilineTextAlignment(.center)
-            .offset(x: 0, y: -60)
+            .offset(x: 0, y: -UIConstants.offsetY / 2)
     }
-    
+
     var firstButton: some View {
-        Button("Пользовательское соглашение"){}
-            .font(.system(size: 14))
-            .frame(width: 280)
-            .fontWeight(.bold)
-            .foregroundColor(Color("fontColor"))
-            .multilineTextAlignment(.center)
-            .offset(x: 0, y: 100)
-    }
+            Button(NSLocalizedString("UserAgreement", comment: "")) {}
+                .font(.system(size: UIConstants.userFontSize))
+                .frame(width: UIConstants.userTextWidth)
+                .fontWeight(.bold)
+                .foregroundColor(UIConstants.fontColor)
+                .multilineTextAlignment(.center)
+                .offset(x: 0, y: UIConstants.offsetY - 20)
+        }
 }
 
 
