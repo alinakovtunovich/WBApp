@@ -22,7 +22,7 @@ struct AuthView: View {
             AuthTextView()
             PhoneField(phoneNumber: $phoneNumber, isPhoneValid: $isPhoneValid, validator: validator)
             if !phoneNumber.isEmpty && !isPhoneValid {
-                Text("Неверный номер телефона")
+                Text(NSLocalizedString("Wrong phone number", comment: ""))
                     .foregroundColor(.red)
                     .padding(.top, 5)
             }
@@ -35,14 +35,13 @@ struct AuthView: View {
     }
 }
 
-
 extension AuthView {
     private var backButton: some View {
         Button(action: {
             dismiss()
         }) {
             Image(systemName: "chevron.left")
-                .foregroundColor(Color("fontColor"))
+                .foregroundColor(UIConstants.fontColor)
         }
     }
 }

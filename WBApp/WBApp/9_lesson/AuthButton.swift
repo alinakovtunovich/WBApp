@@ -27,19 +27,19 @@ struct AuthButton: View {
         }) {
             if isLoading && isPhoneValid {
                 ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: Color("fontColor")))
+                    .progressViewStyle(CircularProgressViewStyle(tint: UIConstants.fontColor))
             } else {
-                Text("Продолжить")
+                Text(NSLocalizedString("Continue", comment: ""))
                     .font(.system(size: 16))
-                    .frame(width: 327, height: 52)
+                    .frame(width: UIConstants.buttonWidth, height: UIConstants.buttonHeight)
                     .fontWeight(.bold)
-                    .foregroundColor(Color("fontButtonColor"))
+                    .foregroundColor(UIConstants.fontButtonColor)
                     .background(
                         (phoneNumber != "" && isPhoneValid) ?
-                        Color("brandButtonColor") :
-                            Color("brandButtonColor").opacity(0.2)
+                        UIConstants.brandButtonColor :
+                            UIConstants.brandButtonColor.opacity(0.5)
                     )
-                    .cornerRadius(30)
+                    .cornerRadius(UIConstants.buttonRadius)
                     .multilineTextAlignment(.center)
             }
         }
@@ -51,6 +51,6 @@ struct AuthButton: View {
 
 struct AuthButton_Previews: PreviewProvider {
     static var previews: some View {
-        AuthButton(isLoading: .constant(false), phoneNumber: .constant("999 999-99-99"), isPhoneValid: .constant(true))
+        AuthButton(isLoading: .constant(false), phoneNumber: .constant("999 999-99-99"), isPhoneValid: .constant(false))
     }
 }

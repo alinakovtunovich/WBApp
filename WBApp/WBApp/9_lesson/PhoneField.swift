@@ -16,26 +16,26 @@ struct PhoneField: View {
     var body: some View {
         HStack {
             ZStack {
-                RoundedRectangle(cornerRadius: 4)
-                    .frame(width: 57.0, height: 36.0)
-                    .foregroundColor(Color("profileDetails"))
+                RoundedRectangle(cornerRadius: UIConstants.radiusCorner)
+                    .frame(width: UIConstants.numberWidth, height: UIConstants.searchHeight)
+                    .foregroundColor(UIConstants.profileDetails)
                 HStack {
                     Image("flag")
-                        .cornerRadius(4)
+                        .cornerRadius(UIConstants.radiusCorner)
                     Text("+7")
-                        .foregroundColor(Color("searchFont"))
+                        .foregroundColor(UIConstants.searchFont)
                         .font(.system(size: 16))
                 }
             }
             ZStack {
-                RoundedRectangle(cornerRadius: 4)
-                    .frame(width: 262.0, height: 36)
-                    .foregroundColor(Color("profileDetails"))
+                RoundedRectangle(cornerRadius: UIConstants.radiusCorner)
+                    .frame(width: UIConstants.searchWidth, height: UIConstants.searchHeight)
+                    .foregroundColor(UIConstants.profileDetails)
                 TextField("000 000-00-00", text: $phoneNumber)
                     .keyboardType(.numberPad)
                     .padding()
                     .padding(.leading, 5)
-                    .foregroundColor(Color("searchFont"))
+                    .foregroundColor(UIConstants.searchFont)
                     .onChange(of: phoneNumber) { value in
                         phoneNumber = validator.formatPhoneNumber(value)
                         isPhoneValid = validator.isValidPhoneNumber(phoneNumber: phoneNumber)

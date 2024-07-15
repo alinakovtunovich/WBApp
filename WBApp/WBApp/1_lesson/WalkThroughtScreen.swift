@@ -15,7 +15,7 @@ struct WalkThroughtScreen: View {
     var body: some View {
         NavigationStack(path: $path) {
             ZStack {
-                Color("backgroundColor").edgesIgnoringSafeArea(.all)
+                UIConstants.backgroundAppColor.edgesIgnoringSafeArea(.all)
                 VStack {
                     illustration
                     text
@@ -24,7 +24,7 @@ struct WalkThroughtScreen: View {
                 }
                 .navigationDestination(isPresented: $startVerification) {
                     ZStack {
-                        Color("backgroundColor").edgesIgnoringSafeArea(.all)
+                        UIConstants.backgroundAppColor.edgesIgnoringSafeArea(.all)
                         AuthView()
                     }
                 }
@@ -36,44 +36,39 @@ struct WalkThroughtScreen: View {
 extension WalkThroughtScreen {
     
     var mainButton: some View {
-        Button("Начать общаться") {
+        Button(NSLocalizedString("StartChatting", comment: "")) {
             startVerification = true
         }
-        .font(.system(size: 16))
-        .frame(width: 327, height: 52)
-        .fontWeight(.bold)
-        .foregroundColor(Color("fontButtonColor"))
-        .background(Color("brandButtonColor"))
-        .cornerRadius(30)
-        .multilineTextAlignment(.center)
-        .offset(x: 0, y: 120)
+        .customButtonStyle()
+        .offset(x: 0, y: UIConstants.offsetY)
     }
     
     var illustration: some View {
         Image("Image")
             .resizable()
-            .frame(width: 262, height: 271)
-            .offset(x: 0, y: -119)
+            .frame(width: UIConstants.illustrationWidth, height: UIConstants.illustrationHeight)
+            .offset(x: 0, y: -UIConstants.offsetY)
     }
     
     var text: some View {
-        Text("Общайтесь с друзьями и близкими легко")
-            .font(.system(size: 24))
-            .frame(width: 280)
+        Text(NSLocalizedString("TalkWithFriends", comment: ""))
+            .font(.system(size: UIConstants.textFontSize))
+            .frame(width: UIConstants.textWidth)
             .fontWeight(.bold)
-            .foregroundColor(Color("fontColor"))
+            .foregroundColor(UIConstants.fontColor)
             .multilineTextAlignment(.center)
-            .offset(x: 0, y: -60)
+            .offset(x: 0, y: -UIConstants.offsetY / 2)
     }
-    
+
     var firstButton: some View {
-        Button("Нажимая кнопку продолжить я соглашаюсь с\nПолитикой Конфиденциальности и Условиями Использования"){}
-            .font(.system(size: 10))
-            .frame(width: 350)
-            .foregroundColor(Color("fontColor"))
-            .multilineTextAlignment(.center)
-            .offset(x: 0, y: 100)
-    }
+            Button(NSLocalizedString("UserAgreement", comment: "")) {}
+                .font(.system(size: UIConstants.userFontSize))
+                .frame(width: UIConstants.userTextWidth)
+                .fontWeight(.bold)
+                .foregroundColor(UIConstants.fontColor)
+                .multilineTextAlignment(.center)
+                .offset(x: 0, y: UIConstants.offsetY - 20)
+        }
 }
 
 

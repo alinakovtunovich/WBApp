@@ -10,14 +10,14 @@ import SwiftUI
 struct AuthTextView: View {
     var body: some View {
         Group {
-            Text("Введите номер телефона")
+            Text(NSLocalizedString("Enter phone number", comment: ""))
                 .font(.system(size: 24))
                 .padding(.bottom, 5)
-                .foregroundColor(Color("fontColor"))
+                .foregroundColor(UIConstants.fontColor)
                 .bold()
-            Text("Мы вышлем код подтверждения \nна указанный номер")
+            Text(NSLocalizedString("We will send a confirmation code \nto the number provided", comment: ""))
                 .font(.system(size: 14))
-                .foregroundColor(Color("fontColor"))
+                .foregroundColor(UIConstants.fontColor)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 20)
         }
