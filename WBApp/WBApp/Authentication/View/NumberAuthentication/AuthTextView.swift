@@ -16,7 +16,7 @@ struct AuthTextView: View {
                 .foregroundColor(UIConstants.fontColor)
                 .bold()
             Text(NSLocalizedString("We will send a confirmation code \nto the number provided", comment: ""))
-                .font(.system(size: 14))
+                .font(.system(size: UIConstants.smallTextFontSize))
                 .foregroundColor(UIConstants.fontColor)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 20)

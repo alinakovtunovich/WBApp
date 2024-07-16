@@ -19,7 +19,7 @@ struct UIConstants {
     static let searchHeight: CGFloat = 36
     static let numberWidth: CGFloat = 57
     static let textFontSize: CGFloat = 24
-    // добавить size для мелкого текста 14
+    static let smallTextFontSize: CGFloat = 14
     static let textWidth: CGFloat = 280
     static let offsetY: CGFloat = 120
     static let userFontSize: CGFloat = 10
