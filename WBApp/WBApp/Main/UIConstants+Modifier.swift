@@ -25,6 +25,7 @@ struct UIConstants {
     static let userFontSize: CGFloat = 10
     static let userTextWidth: CGFloat = 350
     static let radiusCorner: CGFloat = 4
+    static let codeFontSize: CGFloat = 32
     static let backgroundAppColor = Color("backgroundColor")
     static let fontButtonColor = Color("fontButtonColor")
     static let brandButtonColor = Color("brandButtonColor")

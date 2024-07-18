@@ -8,44 +8,44 @@
 import SwiftUI
 
 struct CodeField: View {
-    @Binding var code: String
-    @State private var text1: String = ""
+    @Binding var enteredCode: String
+    var verificationCode: VerificationCode
     @Binding var isCodeCorrect: Bool
-    
     
     var body: some View {
         ZStack {
             Rectangle()
-                .frame(width: 250, height: 80)
+                .frame(width: 300, height: 80)
                 .foregroundColor(Color.clear)
             
             HStack {
                 ForEach(0..<4) { index in
                     Circle()
-                        .foregroundColor(code.count > index ? Color.clear : Color.gray.opacity(0.5))
-                        .frame(width: 20, height: 20)
+                        .foregroundColor(enteredCode.count > index ? Color.clear : Color.gray.opacity(0.5))
+                        .frame(width: 24, height: 24)
                         .padding(20)
                 }
             }
             TextField("", text: Binding(
-                get: { self.code },
+                get: { self.enteredCode },
                 set: { newValue in
                     if newValue.count <= 4 {
-                        self.code = newValue
+                        self.enteredCode = newValue
                         checkCode()
                     }
                 }
             ))
-            .font(.largeTitle)
+            .font(.system(size: UIConstants.codeFontSize))
             .multilineTextAlignment(.leading)
-            .frame(width: 220, height: 50)
+            .frame(width: 235, height: 50)
             .keyboardType(.numberPad)
-            .tracking(40)
+            .tracking(48)
             .padding(.leading, 15)
         }
     }
+    
     private func checkCode() {
-        if code == "1111" {
+        if enteredCode == verificationCode.code {
             isCodeCorrect = true
         }
     }
@@ -68,6 +68,6 @@ struct TrackingModifier: ViewModifier {
 
 struct CodeField_Previews: PreviewProvider {
     static var previews: some View {
-        CodeField(code: .constant(""), isCodeCorrect: .constant(false))
+        CodeField(enteredCode: .constant("12"), verificationCode: VerificationCode(phoneNumber: "999 999-99-99", code: "1111"), isCodeCorrect: .constant(false))
     }
 }

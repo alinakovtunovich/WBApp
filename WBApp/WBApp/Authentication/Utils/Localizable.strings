@@ -13,3 +13,6 @@
 "Enter phone number" = "Введите номер телефона";
 "We will send a confirmation code \nto the number provided" = "Мы вышлем код подтверждения \nна указанный номер";
 "Continue" = "Продолжить";
+"Enter a code" = "Введите код";
+"Sent the code to the number" = "Отправили код на номер";
+"Request code again" = "Запросить код повторно";

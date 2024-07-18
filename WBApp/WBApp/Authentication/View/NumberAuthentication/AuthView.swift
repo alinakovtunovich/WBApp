@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct AuthView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var phoneNumber: String = ""
@@ -18,27 +17,27 @@ struct AuthView: View {
     let validator = Validator()
     
     var body: some View {
-            NavigationStack {
-                VStack {
-                    Spacer()
-                    AuthTextView()
-                    PhoneField(phoneNumber: $phoneNumber, isPhoneValid: $isPhoneValid, validator: validator)
-                    if !phoneNumber.isEmpty && !isPhoneValid {
-                        Text(NSLocalizedString("Wrong phone number", comment: ""))
-                            .foregroundColor(.red)
-                            .padding(.top, 5)
-                    }
-                    Spacer()
-                    AuthButton(isLoading: $isLoading, phoneNumber: $phoneNumber, isPhoneValid: $isPhoneValid, isNavigating: $isNavigating)
-                    Spacer()
+        NavigationStack {
+            VStack {
+                Spacer()
+                AuthTextView()
+                PhoneField(phoneNumber: $phoneNumber, isPhoneValid: $isPhoneValid, validator: validator)
+                if !phoneNumber.isEmpty && !isPhoneValid {
+                    Text(NSLocalizedString("Wrong phone number", comment: ""))
+                        .foregroundColor(.red)
+                        .padding(.top, 5)
                 }
-                .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading: backButton)
-                .navigationDestination(isPresented: $isNavigating) {
-                    VerificationCodeView(phoneNumber: phoneNumber)
-                }
+                Spacer()
+                AuthButton(isLoading: $isLoading, phoneNumber: $phoneNumber, isPhoneValid: $isPhoneValid, isNavigating: $isNavigating)
+                Spacer()
+            }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: backButton)
+            .navigationDestination(isPresented: $isNavigating) {
+                VerificationCodeView(verificationCode: VerificationCode(phoneNumber: phoneNumber, code: "1111"))
             }
         }
+    }
 }
 
 extension AuthView {

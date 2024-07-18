@@ -3,32 +3,39 @@ import SwiftUI
 
 struct VerificationCodeView: View {
     @Environment(\.dismiss) private var dismiss
-    @State var phoneNumber: String
-    @State private var code: String = ""
+    @State var verificationCode: VerificationCode
+    @State private var enteredCode: String = ""
     @State private var isCodeCorrect: Bool = false
     @State private var isNavigating: Bool = false
     
     var body: some View {
         VStack {
             Spacer()
-            Text("Введите код")
+            Text(NSLocalizedString("Enter a code", comment: ""))
                 .font(.system(size: UIConstants.textFontSize))
+                .padding(.bottom, 10)
+                .foregroundColor(UIConstants.fontColor)
                 .bold()
-                .padding(.bottom, 20)
+            Group {
+                Text(NSLocalizedString("Sent the code to the number", comment: ""))
+                Text("+7 \(verificationCode.phoneNumber)")
+            }
+            .font(.system(size: UIConstants.smallTextFontSize))
+            .foregroundColor(UIConstants.fontColor)
+            .multilineTextAlignment(.center)
+            .padding(.bottom, 20)
+            .lineSpacing(8)
             
-            Text("Отправили код на номер \n +7 \(phoneNumber)")
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 40)
-            
-            CodeField(code: $code, isCodeCorrect: $isCodeCorrect)
+            CodeField(enteredCode: $enteredCode, verificationCode: verificationCode, isCodeCorrect: $isCodeCorrect)
             
             Spacer()
             
             Button(action: {
-                code = ""
+                enteredCode = ""
             }) {
-                Text("Запросить код повторно")
+                Text(NSLocalizedString("Request code again", comment: ""))
                     .foregroundColor(UIConstants.brandButtonColor)
+                    .bold()
                     .padding(.top, 20)
             }
             
@@ -62,6 +69,6 @@ struct VerificationCodeView: View {
 
 struct VerificationCodeView_Previews: PreviewProvider {
     static var previews: some View {
-        VerificationCodeView(phoneNumber: "999 999-99-99")
+        VerificationCodeView(verificationCode: VerificationCode(phoneNumber: "999 999-99-99", code: "1111"))
     }
 }

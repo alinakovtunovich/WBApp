@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct VerificationCode {
+struct VerificationCode: Identifiable {
+    let id = UUID()
     let phoneNumber: String
     let code: String
 }
