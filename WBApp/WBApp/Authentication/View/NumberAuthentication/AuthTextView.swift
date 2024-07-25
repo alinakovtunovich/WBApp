@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UISystem
 
 struct AuthTextView: View {
     var body: some View {

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import UISystem
 
 struct WalkThroughtScreen: View {
     @State private var startVerification = false
@@ -69,6 +70,12 @@ extension WalkThroughtScreen {
                 .multilineTextAlignment(.center)
                 .offset(x: 0, y: UIConstants.offsetY - 20)
         }
+}
+
+extension View {
+    func customButtonStyle() -> some View {
+        self.modifier(ButtonModifier())
+    }
 }
 
 

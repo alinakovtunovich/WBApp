@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UISystem
 
 struct AuthView: View {
     @Environment(\.dismiss) private var dismiss

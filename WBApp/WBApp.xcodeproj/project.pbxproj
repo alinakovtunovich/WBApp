@@ -36,6 +36,7 @@
 		A3403DD32C1B8B7C000B3C36 /* StatusOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DD22C1B8B7C000B3C36 /* StatusOverlay.swift */; };
 		A3403DD62C1B8C28000B3C36 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DD52C1B8C28000B3C36 /* AvatarView.swift */; };
 		A34365FD2C29D23300F6CB75 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34365FC2C29D23300F6CB75 /* main.swift */; };
+		A345C7B42C52B548006B5811 /* UISystem in Frameworks */ = {isa = PBXBuildFile; productRef = A345C7B32C52B548006B5811 /* UISystem */; };
 		A34769092C280C70005D777C /* ProfileInList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DCE2C1B3879000B3C36 /* ProfileInList.swift */; };
 		A347690A2C2835A1005D777C /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3403DD52C1B8C28000B3C36 /* AvatarView.swift */; };
 		A347690B2C283864005D777C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C0C76D82C10B7A3009985F2 /* Assets.xcassets */; };
@@ -44,7 +45,6 @@
 		A34B88102C20805500F4AF82 /* Contact_TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34B880F2C20805500F4AF82 /* Contact_TabView.swift */; };
 		A34B88122C20824E00F4AF82 /* ContactsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34B88112C20824E00F4AF82 /* ContactsMainView.swift */; };
 		A3542BDC2C425106000918B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A3542BDB2C425105000918B8 /* Localizable.strings */; };
-		A3542BDE2C425136000918B8 /* UIConstants+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3542BDD2C425136000918B8 /* UIConstants+Modifier.swift */; };
 		A3542BE42C4531A7000918B8 /* ContactStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A347690F2C286BC0005D777C /* ContactStore.swift */; };
 		A3542BE62C453295000918B8 /* VerificationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3542BE52C453295000918B8 /* VerificationCodeView.swift */; };
 		A3542BEA2C453424000918B8 /* VerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3542BE92C453424000918B8 /* VerificationCode.swift */; };
@@ -156,12 +156,12 @@
 		A3403DD52C1B8C28000B3C36 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		A34365FA2C29D23300F6CB75 /* Bank */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bank; sourceTree = BUILT_PRODUCTS_DIR; };
 		A34365FC2C29D23300F6CB75 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A345C7B22C52B222006B5811 /* UISystem */ = {isa = PBXFileReference; lastKnownFileType = text; name = UISystem; path = Modules/UISystem; sourceTree = SOURCE_ROOT; };
 		A347690F2C286BC0005D777C /* ContactStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStore.swift; sourceTree = "<group>"; };
 		A34B880D2C203F2C00F4AF82 /* ToolbarProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarProfile.swift; sourceTree = "<group>"; };
 		A34B880F2C20805500F4AF82 /* Contact_TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact_TabView.swift; sourceTree = "<group>"; };
 		A34B88112C20824E00F4AF82 /* ContactsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsMainView.swift; sourceTree = "<group>"; };
 		A3542BDB2C425105000918B8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		A3542BDD2C425136000918B8 /* UIConstants+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIConstants+Modifier.swift"; path = "/Users/alinakovtunovich/Desktop/WBApp/WBApp/WBApp/Main/UIConstants+Modifier.swift"; sourceTree = "<absolute>"; };
 		A3542BE52C453295000918B8 /* VerificationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeView.swift; sourceTree = "<group>"; };
 		A3542BE92C453424000918B8 /* VerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCode.swift; sourceTree = "<group>"; };
 		A3600C1C2C2986B1004DCEA3 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
@@ -196,6 +196,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A345C7B42C52B548006B5811 /* UISystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +271,7 @@
 		2C0C76D32C10B7A1009985F2 /* WBApp */ = {
 			isa = PBXGroup;
 			children = (
+				A345C7B22C52B222006B5811 /* UISystem */,
 				A3542BE82C4532DB000918B8 /* Authentication */,
 				A3542BE02C452FA6000918B8 /* Main */,
 				A3C5E9352C2740B5008E6912 /* WBApp.entitlements */,
@@ -384,7 +386,6 @@
 		A3542BE02C452FA6000918B8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				A3542BDD2C425136000918B8 /* UIConstants+Modifier.swift */,
 				2C0C76D42C10B7A1009985F2 /* WBAppApp.swift */,
 				2C0C76D62C10B7A1009985F2 /* ContentView.swift */,
 			);
@@ -521,6 +522,9 @@
 				A3C5E92F2C27409A008E6912 /* PBXTargetDependency */,
 			);
 			name = WBApp;
+			packageProductDependencies = (
+				A345C7B32C52B548006B5811 /* UISystem */,
+			);
 			productName = WBApp;
 			productReference = 2C0C76D12C10B7A1009985F2 /* WBApp.app */;
 			productType = "com.apple.product-type.application";
@@ -738,7 +742,6 @@
 				A33508152C40029600FC37D2 /* PhoneField.swift in Sources */,
 				2C0C76E32C10B80A009985F2 /* WalkThroughtScreen.swift in Sources */,
 				A34B880E2C203F2C00F4AF82 /* ToolbarProfile.swift in Sources */,
-				A3542BDE2C425136000918B8 /* UIConstants+Modifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1287,6 +1290,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A345C7B32C52B548006B5811 /* UISystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UISystem;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2C0C76C92C10B7A1009985F2 /* Project object */;
 }

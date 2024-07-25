@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UISystem
 
 struct AuthButton: View {
     @Binding var isLoading: Bool
