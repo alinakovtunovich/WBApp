@@ -10,56 +10,84 @@ import SwiftUI
 struct AvatarView: View {
     let contact: Contacts
     let localizationAvatar: String
+    @StateObject private var imageLoader = ImageLoader()
     
     var body: some View {
         
         switch localizationAvatar {
         case "list":
-            switch contact.avatar {
-            case .some(let imageName):
-                Image(imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 48, height: 48)
-                    .cornerRadius(16)
-                    .padding(2)
-                    .overlay(StoryOverlay(contact: contact))
-                    .overlay(StatusOverlay(contact: contact))
-            default:
-                Text(contact.initials())
-                    .foregroundColor(.white)
-                    .font(.system(size: 14, weight: .bold))
-                    .frame(width: 48, height: 48)
-                    .background(Color("avatarColor"))
-                    .cornerRadius(16)
-                    .padding(2)
-                    .overlay(StoryOverlay(contact: contact))
-                    .overlay(StatusOverlay(contact: contact))
+            if let avatarURL = contact.avatar {
+                if let image = imageLoader.image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 48, height: 48)
+                        .cornerRadius(16)
+                        .padding(2)
+                        .overlay(StoryOverlay(contact: contact))
+                        .overlay(StatusOverlay(contact: contact))
+                } else {
+                    textAvatar(contact: contact)
+                        .onAppear {
+                            imageLoader.loadImage(from: avatarURL)
+                        }
+                }
+            } else {
+                textAvatar(contact: contact)
             }
         case "profile":
-            switch contact.avatar {
-            case .some(let imageName):
-                Image(imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 200, height: 200)
-                    .clipShape(Circle())
-            default:
+            if let avatarURL = contact.avatar {
                 
-                ZStack {
-                    Circle()
-                        .fill(Color("profileDetails"))
-                        .frame(width: 200, height: 200)
-                    
-                    Image("profile")
+                if let image = imageLoader.image {
+                    Image(uiImage: image)
                         .resizable()
-                        .scaledToFit()
-                        .frame(width: 75, height: 89)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 200, height: 200)
+                        .clipShape(Circle())
+                } else {
+                    personNoAvatar()
+                        .onAppear {
+                            imageLoader.loadImage(from: avatarURL)
+                        }
                 }
             }
+            else {
+                personNoAvatar()
+            }
+            
         default:
             VStack {}
         }
     }
 }
 
+
+struct textAvatar: View {
+    let contact: Contacts
+    
+    var body: some View {
+        Text(contact.initials())
+            .foregroundColor(.white)
+            .font(.system(size: 14, weight: .bold))
+            .frame(width: 48, height: 48)
+            .background(Color("avatarColor"))
+            .cornerRadius(16)
+            .padding(2)
+            .overlay(StoryOverlay(contact: contact))
+            .overlay(StatusOverlay(contact: contact))
+    }
+}
+
+struct personNoAvatar: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(Color("profileDetails"))
+                .frame(width: 200, height: 200)
+            Image("profile")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 75, height: 89)
+        }
+    }
+}

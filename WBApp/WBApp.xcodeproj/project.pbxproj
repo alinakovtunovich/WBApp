@@ -14,6 +14,8 @@
 		2C0C76E32C10B80A009985F2 /* WalkThroughtScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0C76E22C10B80A009985F2 /* WalkThroughtScreen.swift */; };
 		A30C5BD72C1840080010C974 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C5BD62C1840080010C974 /* ContactsView.swift */; };
 		A30C5BD92C187BDA0010C974 /* ContactsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30C5BD82C187BDA0010C974 /* ContactsList.swift */; };
+		A310B2242C59710A000DA180 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A310B2232C59710A000DA180 /* ImageLoader.swift */; };
+		A310B2252C59722A000DA180 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A310B2232C59710A000DA180 /* ImageLoader.swift */; };
 		A31CB7F22C302E5A00760B11 /* ScrollAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CB7F12C302E5A00760B11 /* ScrollAppApp.swift */; };
 		A31CB7F42C302E5A00760B11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31CB7F32C302E5A00760B11 /* ContentView.swift */; };
 		A31CB7F62C302E5E00760B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A31CB7F52C302E5E00760B11 /* Assets.xcassets */; };
@@ -131,6 +133,7 @@
 		2C0C76E22C10B80A009985F2 /* WalkThroughtScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughtScreen.swift; sourceTree = "<group>"; };
 		A30C5BD62C1840080010C974 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		A30C5BD82C187BDA0010C974 /* ContactsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsList.swift; sourceTree = "<group>"; };
+		A310B2232C59710A000DA180 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		A31CB7EF2C302E5A00760B11 /* ScrollApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A31CB7F12C302E5A00760B11 /* ScrollAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollAppApp.swift; sourceTree = "<group>"; };
 		A31CB7F32C302E5A00760B11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -353,6 +356,7 @@
 				A3403DD22C1B8B7C000B3C36 /* StatusOverlay.swift */,
 				A3403DD02C1B86DA000B3C36 /* StoryOverlay.swift */,
 				A3403DD52C1B8C28000B3C36 /* AvatarView.swift */,
+				A310B2232C59710A000DA180 /* ImageLoader.swift */,
 			);
 			path = AvatarGroup;
 			sourceTree = "<group>";
@@ -739,6 +743,7 @@
 				A3403DCF2C1B3879000B3C36 /* ProfileInList.swift in Sources */,
 				A3600C262C2987D1004DCEA3 /* ContactAvatarView.swift in Sources */,
 				A33508112C3FDBA800FC37D2 /* Validator.swift in Sources */,
+				A310B2242C59710A000DA180 /* ImageLoader.swift in Sources */,
 				A33508152C40029600FC37D2 /* PhoneField.swift in Sources */,
 				2C0C76E32C10B80A009985F2 /* WalkThroughtScreen.swift in Sources */,
 				A34B880E2C203F2C00F4AF82 /* ToolbarProfile.swift in Sources */,
@@ -796,6 +801,7 @@
 				A3600C242C298786004DCEA3 /* LargeWidgetView.swift in Sources */,
 				A3542BE42C4531A7000918B8 /* ContactStore.swift in Sources */,
 				A3600C272C2987D1004DCEA3 /* ContactAvatarView.swift in Sources */,
+				A310B2252C59722A000DA180 /* ImageLoader.swift in Sources */,
 				A347690A2C2835A1005D777C /* AvatarView.swift in Sources */,
 				A3C5E9232C274091008E6912 /* WBWidgetBundle.swift in Sources */,
 				A3C5E93B2C280156008E6912 /* StatusOverlay.swift in Sources */,
