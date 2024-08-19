@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  WBApp
+
+  Created by Аlina Кovtunovich on 13.07.2024.
+  
+*/
+"Close" = "Закрыть";
+"StartChatting" = "Начать общаться";
+"TalkWithFriends" = "Общайтесь с друзьями и близкими легко";
+"UserAgreement" = "Нажимая кнопку продолжить я соглашаюсь с\nПолитикой Конфиденциальности и Условиями Использования";
+"Wrong phone number" = "Неверный номер телефона";
+"Enter phone number" = "Введите номер телефона";
+"We will send a confirmation code \nto the number provided" = "Мы вышлем код подтверждения \nна указанный номер";
+"Continue" = "Продолжить";
+"Enter a code" = "Введите код";
+"Sent the code to the number" = "Отправили код на номер";
+"Request code again" = "Запросить код повторно";
