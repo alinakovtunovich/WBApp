@@ -1,0 +1,50 @@
+{
+  "pins" : [
+    {
+      "identity" : "activityindicatorview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/exyte/ActivityIndicatorView",
+      "state" : {
+        "revision" : "9970fd0bb7a05dad0b6566ae1f56937716686b24",
+        "version" : "1.1.1"
+      }
+    },
+    {
+      "identity" : "chat",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/exyte/Chat",
+      "state" : {
+        "revision" : "3f6ce8ce5b7b41f8bfc0a21d364856168b1e3651",
+        "version" : "1.1.1"
+      }
+    },
+    {
+      "identity" : "floatingbutton",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/exyte/FloatingButton",
+      "state" : {
+        "revision" : "cf77c2f124df1423d90a9a1985e9b9ccfa4b9b3e",
+        "version" : "1.3.0"
+      }
+    },
+    {
+      "identity" : "mediapicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/exyte/MediaPicker.git",
+      "state" : {
+        "revision" : "d25d75019b3a990bdf34457e21bb9da297c2acea",
+        "version" : "1.4.0"
+      }
+    },
+    {
+      "identity" : "swiftui-introspect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/SwiftUI-Introspect.git",
+      "state" : {
+        "revision" : "121c146fe591b1320238d054ae35c81ffa45f45a",
+        "version" : "0.12.0"
+      }
+    }
+  ],
+  "version" : 2
+}
